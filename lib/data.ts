@@ -42,9 +42,20 @@ export const getNavigation = cache(async (locale: Locale = defaultLocale) => {
   return { primary: content.navigation, footer: content.footerLinks }
 })
 
-export const getProductFamilies = cache(async (locale: Locale = defaultLocale) =>
-  getContent(locale).families,
-)
+export const getProductFamilies = cache(async (locale: Locale = defaultLocale) => {
+  const fallback = getContent(locale).families
+  const db = database()
+  const tenant = tenantId()
+  if (!db || !tenant) return fallback
+  const { data } = await db.from('product_categories').select('slug,name,name_en,name_i18n,description,description_en,description_i18n').eq('tenant_id', tenant).eq('is_active', true).is('parent_id', null).order('sort_order')
+  if (!data?.length) return fallback
+  return data.map((row) => {
+    const original = fallback.find((item) => item.slug === row.slug)
+    const name = localized(row.name_i18n, locale, row.name_en || row.name || original?.name || row.slug)
+    const summary = localized(row.description_i18n, locale, row.description_en || row.description || original?.summary || '')
+    return { slug: row.slug as FamilySlug, name, descriptor: original?.descriptor || name, summary, scope: original?.scope || [] }
+  })
+})
 
 export async function getProductFamilyBySlug(
   slug: string | undefined,
