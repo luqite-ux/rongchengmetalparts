@@ -31,9 +31,24 @@ const localized = (value: unknown, locale: Locale, fallback = '') => {
 
 export const getSiteSettings = cache(async (locale: Locale = defaultLocale) => {
   const content = getContent(locale)
+  const db = database()
+  const tenant = tenantId()
+  let companyMedia: string[] = []
+  let logoUrl = '/images/logo-full.png'
+  if (db && tenant) {
+    const { data } = await db.from('tenants').select('logo_url,extra_settings').eq('id', tenant).maybeSingle()
+    if (data) {
+      logoUrl = data.logo_url || logoUrl
+      companyMedia = Array.isArray(data.extra_settings?.site_assets?.company_media)
+        ? data.extra_settings.site_assets.company_media.filter((value: unknown): value is string => typeof value === 'string' && value.startsWith('https://'))
+        : []
+    }
+  }
   return {
     ...content.site,
     certificationStatements: content.certificationStatements,
+    companyMedia,
+    logoUrl,
   }
 })
 
@@ -169,12 +184,12 @@ export async function getArticles(
   const db = database()
   const tenant = tenantId()
   if (!db || !tenant) return []
-  const { data } = await db.from('articles').select('slug,title,title_i18n,excerpt,excerpt_i18n,content,content_i18n,featured_image,published_at,created_at,author,seo_title,seo_description').eq('tenant_id', tenant).eq('is_published', true).order('published_at', { ascending: false })
+  const { data } = await db.from('articles').select('slug,title,title_i18n,excerpt,excerpt_i18n,content,content_i18n,featured_image,published_at,created_at,seo_title,seo_description').eq('tenant_id', tenant).eq('is_published', true).order('published_at', { ascending: false })
   return (data ?? []).map((row) => {
     const title = localized(row.title_i18n, locale, row.title || row.slug)
     const excerpt = localized(row.excerpt_i18n, locale, row.excerpt || '')
     const content = localized(row.content_i18n, locale, row.content || '')
-    return { slug: row.slug, title, excerpt, publishedAt: row.published_at || row.created_at, author: row.author || undefined, coverImage: row.featured_image ? { src: row.featured_image, alt: title } : undefined, body: content.split(/\n{2,}/).filter(Boolean), seo: { title: row.seo_title || title, description: row.seo_description || excerpt } }
+    return { slug: row.slug, title, excerpt, publishedAt: row.published_at || row.created_at, coverImage: row.featured_image ? { src: row.featured_image, alt: title } : undefined, body: content.split(/\n{2,}/).filter(Boolean), seo: { title: row.seo_title || title, description: row.seo_description || excerpt } }
   })
 }
 

@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import Image from 'next/image'
-import { getAboutContent, getPageMeta, getProductFamilies } from '@/lib/data'
+import { getAboutContent, getPageMeta, getProductFamilies, getSiteSettings } from '@/lib/data'
 import { PageHero } from '@/components/site/page-hero'
 import { CtaLink, Section, SectionHeading } from '@/components/site/primitives'
 import { Reveal } from '@/components/site/reveal'
@@ -16,7 +16,7 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default async function AboutPage() {
-  const [about, families] = await Promise.all([getAboutContent(), getProductFamilies()])
+  const [about, families, site] = await Promise.all([getAboutContent(), getProductFamilies(), getSiteSettings()])
 
   return (
     <>
@@ -36,7 +36,7 @@ export default async function AboutPage() {
               ))}
             </div>
             <Image
-              src="/images/logo-full.png"
+              src={site.logoUrl}
               alt="RunCing logo"
               width={160}
               height={160}
@@ -62,6 +62,24 @@ export default async function AboutPage() {
           </Reveal>
         </div>
       </Section>
+      {site.companyMedia.length ? (
+        <Section labelledBy="company-gallery-title" tone="stage">
+          <Reveal>
+            <SectionHeading id="company-gallery-title" eyebrow="Factory evidence" title="Inside RunCing" description="Customer-supplied views of the facility, equipment and working environment." />
+          </Reveal>
+          <ul className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {site.companyMedia.map((src, index) => (
+              <li key={src} className="overflow-hidden border bg-card">
+                <Reveal className="h-full">
+                  <div className="relative aspect-[4/3] bg-stage">
+                    <Image src={src} alt={`RunCing facility view ${index + 1}`} fill sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" className="object-cover" />
+                  </div>
+                </Reveal>
+              </li>
+            ))}
+          </ul>
+        </Section>
+      ) : null}
       <Section labelledBy="families-title" tone="stage">
         <Reveal>
           <SectionHeading

@@ -71,6 +71,24 @@ export default async function ManufacturingPage() {
           </Reveal>
         </div>
       </Section>
+      {site.companyMedia.length ? (
+        <Section labelledBy="workshop-gallery-title" tone="stage">
+          <Reveal>
+            <SectionHeading id="workshop-gallery-title" eyebrow="Customer-supplied views" title="Facility and equipment gallery" description="These images come directly from RunCing's supplied company materials." />
+          </Reveal>
+          <ul className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {site.companyMedia.map((src, index) => (
+              <li key={src} className="overflow-hidden border bg-card">
+                <Reveal className="h-full">
+                  <div className="relative aspect-[4/3] bg-stage">
+                    <Image src={src} alt={`RunCing workshop and equipment view ${index + 1}`} fill sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" className="object-cover" />
+                  </div>
+                </Reveal>
+              </li>
+            ))}
+          </ul>
+        </Section>
+      ) : null}
       <Section labelledBy="line-title" tone="stage">
         <Reveal>
           <SectionHeading
