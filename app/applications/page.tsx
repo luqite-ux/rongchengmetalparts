@@ -21,7 +21,7 @@ export default async function ApplicationsPage() {
       <PageHero
         eyebrow="Applications"
         title="Where RunCing valves and connectors are used"
-        description="Use areas stated by RunCing. These are application areas, not customer project references, and no customer names or results are claimed."
+        description="Review common use areas for RunCing valves and connectors, then share your system details for product selection."
         crumbs={[{ label: 'Applications' }]}
       />
       <Section labelledBy="areas-title">

@@ -72,31 +72,31 @@ export const homeSections = {
     eyebrow: 'Featured products',
     title: 'Six products from the current range',
     description:
-      'Every product has its own page with its supplied image, material label and RFQ path.',
+      'Every product has its own page with product images, material information and an RFQ path.',
   },
   applications: {
     eyebrow: 'Applications',
     title: 'Where these components are used',
     description:
-      'Use areas stated by RunCing. These are application areas, not customer project references.',
+      'Explore common use areas for RunCing valves and connectors.',
   },
   materials: {
     eyebrow: 'Material options',
     title: 'Brass, stainless steel and aluminum',
     description:
-      'The three materials supplied across the current range. No performance figures are published here; they are discussed against your requirements.',
+      'Compare the three materials available across the current range and discuss performance requirements during selection.',
   },
   manufacturing: {
     eyebrow: 'Manufacturing capability',
     title: 'Equipment and workshops behind the range',
     description:
-      'Capability facts supplied by RunCing. Further figures are added here only once confirmed.',
+      'Explore RunCing\'s production equipment, workshop organization and inspection workflow.',
   },
   quality: {
     eyebrow: 'Quality and certification',
-    title: 'Inspection, reports and stated quality systems',
+    title: 'Inspection, reports and quality systems',
     description:
-      'RunCing states ISO 9001 and IATF 16949 information. Certificate numbers, scope and copies are not published on this site.',
+      'Discuss applicable quality-system documentation and inspection records for your project.',
   },
   customization: {
     eyebrow: 'Customization',
@@ -113,7 +113,7 @@ export const homeSections = {
   faq: {
     eyebrow: 'FAQ',
     title: 'Procurement questions',
-    description: 'Short answers based on information supplied by RunCing.',
+    description: 'Practical answers for product selection and quotation planning.',
   },
   rfq: {
     eyebrow: 'Request for quotation',
@@ -165,21 +165,21 @@ export const materialOptions: MaterialOption[] = [
   {
     slug: 'brass',
     name: 'Brass',
-    summary: 'Supplied in the Air Line Ball Valve and the Brass Valve Assembly.',
+    summary: 'Available for the Air Line Ball Valve and Brass Valve Assembly.',
     note: 'Finish and dimensions are confirmed during RFQ.',
     productSlugs: ['air-line-ball-valve', 'brass-valve-assembly'],
   },
   {
     slug: 'stainless-steel',
     name: 'Stainless steel',
-    summary: 'Supplied in the Stainless Steel Valve Assembly.',
+    summary: 'Available for the Stainless Steel Valve Assembly.',
     note: 'Grade is confirmed during RFQ.',
     productSlugs: ['stainless-steel-valve-assembly'],
   },
   {
     slug: 'aluminum',
     name: 'Aluminum',
-    summary: 'Supplied in the Aluminum Valve Assembly.',
+    summary: 'Available for the Aluminum Valve Assembly.',
     note: 'Alloy and surface treatment are confirmed during RFQ.',
     productSlugs: ['aluminum-valve-assembly'],
   },
@@ -197,7 +197,7 @@ export const manufacturingContent = {
     },
     {
       label: 'Inspection and reports',
-      description: 'Inspection and report capability is stated by RunCing. Report formats are confirmed per project.',
+      description: 'Inspection records and report formats are confirmed for each project.',
     },
   ],
   capabilityLine: [
@@ -227,7 +227,7 @@ export const manufacturingContent = {
     },
   ] satisfies ImageAsset[],
   scaleNote:
-    'The factory scale figure will be published here once confirmed by RunCing.',
+    'Contact RunCing to discuss the production capacity required for your order.',
 }
 
 export const qualityContent = {
@@ -242,7 +242,7 @@ export const qualityContent = {
     },
   ],
   disclaimer:
-    'Certificate numbers, scope, issuing bodies and copies are not published here. Ask RunCing which quality documents apply to your project.',
+    'Quality-system documentation and inspection records can be reviewed for applicable projects.',
 }
 
 export const customizationContent = {
@@ -310,7 +310,7 @@ export const faqItems: FaqItem[] = [
     id: 'materials',
     question: 'Which materials are available?',
     answer:
-      'Brass, stainless steel and aluminum. Each material appears in real supplied products. Grades and finishes are confirmed during RFQ.',
+      'Brass, stainless steel and aluminum. Grades and finishes are confirmed during RFQ.',
   },
   {
     id: 'custom',
@@ -322,7 +322,7 @@ export const faqItems: FaqItem[] = [
     id: 'quality',
     question: 'What quality information is available?',
     answer:
-      'RunCing states ISO 9001 and IATF 16949 information and inspection and report capability. Certificate numbers and scope are not published on this site; ask which documents apply to your project.',
+      'RunCing works with ISO 9001 and IATF 16949 quality-management requirements. Ask which documentation and inspection records apply to your project.',
   },
   {
     id: 'rfq',
@@ -334,7 +334,7 @@ export const faqItems: FaqItem[] = [
     id: 'pricing',
     question: 'Are prices and stock levels listed?',
     answer:
-      'No. Prices and availability are not published. Quotations are handled through the RFQ process.',
+      'Pricing and availability are confirmed through the RFQ process for the requested product, specification and quantity.',
   },
   {
     id: 'contact',
@@ -346,7 +346,7 @@ export const faqItems: FaqItem[] = [
 
 export const aboutContent = {
   intro: [
-    'RunCing Tech is the English trading name of RunCing Electromechanical Technology Co., Ltd. The verified Chinese legal entity is 宁波荣城机电科技有限公司.',
+    'RunCing Tech is the trading name of RunCing Electromechanical Technology Co., Ltd.',
     'The company supplies ball valves, valve assemblies and connector assemblies in brass, stainless steel and aluminum, and supports OEM/ODM requests.',
   ],
   facts: [
@@ -355,9 +355,9 @@ export const aboutContent = {
     { label: 'Products', value: 'Ball valves, valve assemblies, connector assemblies' },
     { label: 'Materials', value: 'Brass, stainless steel, aluminum' },
     { label: 'Manufacturing', value: 'Hot-forging equipment, four workshops' },
-    { label: 'Quality systems stated', value: 'ISO 9001, IATF 16949' },
+    { label: 'Quality systems', value: 'ISO 9001, IATF 16949' },
   ],
-  note: 'Business licence images and registration identifiers are intentionally not published on this site.',
+  note: 'Company documentation can be discussed during supplier qualification.',
 }
 
 export const pageMeta = {

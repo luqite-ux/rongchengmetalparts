@@ -124,8 +124,7 @@ export default async function ProductPage({
               </CtaLink>
             </div>
             <p className="mt-4 text-xs leading-relaxed text-muted-foreground">
-              Prices, stock levels and performance figures are not published. Specifications are
-              confirmed during RFQ.
+              Specifications, availability and commercial terms are confirmed during RFQ.
             </p>
           </div>
         </div>

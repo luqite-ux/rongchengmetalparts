@@ -63,10 +63,10 @@ export const footerLinks = {
 export const certificationStatements: CertificationStatement[] = [
   {
     label: 'ISO 9001',
-    note: 'Quality management system, as stated by RunCing.',
+    note: 'Quality management system used in production management.',
   },
   {
     label: 'IATF 16949',
-    note: 'Automotive quality management system, as stated by RunCing.',
+    note: 'Automotive quality management system used in production management.',
   },
 ]

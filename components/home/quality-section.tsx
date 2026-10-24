@@ -29,7 +29,7 @@ export function QualitySection({
           <div className="space-y-8">
             <div>
               <h3 className="font-mono text-xs font-medium uppercase tracking-[0.14em] text-muted-foreground">
-                Customer-stated quality systems
+                Quality management systems
               </h3>
               <ul className="mt-3 grid gap-4 sm:grid-cols-2">
                 {statements.map((statement) => (

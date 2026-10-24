@@ -65,7 +65,7 @@ export default async function AboutPage() {
       {site.companyMedia.length ? (
         <Section labelledBy="company-gallery-title" tone="stage">
           <Reveal>
-            <SectionHeading id="company-gallery-title" eyebrow="Factory evidence" title="Inside RunCing" description="Customer-supplied views of the facility, equipment and working environment." />
+            <SectionHeading id="company-gallery-title" eyebrow="Factory overview" title="Inside RunCing" description="A closer look at the facility, production equipment and working environment." />
           </Reveal>
           <ul className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {site.companyMedia.map((src, index) => (

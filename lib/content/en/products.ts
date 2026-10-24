@@ -14,7 +14,7 @@ export const families: ProductFamily[] = [
     name: 'Valve Assemblies',
     descriptor: 'Valve Series',
     summary:
-      'Machined valve assemblies supplied in three materials: brass, stainless steel and aluminum.',
+      'Machined valve assemblies available in brass, stainless steel and aluminum.',
     scope: [
       'Brass Valve Assembly',
       'Stainless Steel Valve Assembly',
@@ -45,7 +45,7 @@ export const products: Product[] = [
       'Ball valve with a brass body, wing-style handle and threaded ends.',
     description: [
       'The Air Line Ball Valve is the Ball Valve Series product in RunCing’s current range.',
-      'The supplied product image shows a brass body, a wing-style handle, a male threaded end and a female threaded end.',
+      'A brass body with a wing-style handle, male threaded end and female threaded end.',
       'Thread standard, size and handle style are confirmed against your drawing or sample during technical review.',
     ],
     highlights: [
@@ -85,7 +85,7 @@ export const products: Product[] = [
       'Machined brass valve assembly with a cross port, hex collar and grooved shoulders.',
     description: [
       'The Brass Valve Assembly is the brass option within RunCing’s valve assemblies.',
-      'The supplied product image shows a turned cylindrical body with a cross port, a hex collar and several machined shoulders and grooves.',
+      'A turned cylindrical body with a cross port, hex collar and machined shoulders and grooves.',
       'Dimensions, port layout and finish are agreed from your drawing or sample during technical review.',
     ],
     highlights: [
@@ -124,7 +124,7 @@ export const products: Product[] = [
       'Compact stainless steel valve assembly body with a top bore and a threaded side port.',
     description: [
       'The Stainless Steel Valve Assembly is the stainless steel option within RunCing’s valve assemblies.',
-      'The supplied product image shows a compact cylindrical body with a large top bore, a seam line and an internally threaded side port.',
+      'A compact cylindrical body with a large top bore and an internally threaded side port.',
       'Grade, dimensions and thread are confirmed from your drawing or sample during technical review.',
     ],
     highlights: [
@@ -164,7 +164,7 @@ export const products: Product[] = [
       'Aluminum valve assembly with a hex end, a side port and a visible sealing ring.',
     description: [
       'The Aluminum Valve Assembly is the aluminum option within RunCing’s valve assemblies.',
-      'The supplied product image shows a valve body with a hex end, a side port and a sealing ring at the upper shoulder.',
+      'A valve body with a hex end, side port and sealing ring at the upper shoulder.',
       'Alloy, surface treatment, dimensions and thread are confirmed from your drawing or sample during technical review.',
     ],
     highlights: [
@@ -204,7 +204,7 @@ export const products: Product[] = [
       'Bent connector assembly with a male threaded end and a hex swivel-nut end.',
     description: [
       'The Elbow Assembly is a Connector Series product used to change line direction.',
-      'The supplied product image shows a bent tube section with a male threaded end on one side and a hex swivel-nut end on the other.',
+      'A bent tube section with a male threaded end and a hex swivel-nut end.',
       'Material, angle, tube size and thread standard are confirmed from your drawing or sample during technical review.',
     ],
     highlights: [
@@ -243,7 +243,7 @@ export const products: Product[] = [
       'Straight connector with a ribbed barb end and a hex nut end.',
     description: [
       'The Straight Connector is a Connector Series product for joining lines in a straight run.',
-      'The supplied product image shows a ribbed barb end, a sealing shoulder and a hex nut end.',
+      'A ribbed barb end with a sealing shoulder and hex nut end.',
       'Material, barb size and thread standard are confirmed from your drawing or sample during technical review.',
     ],
     highlights: [

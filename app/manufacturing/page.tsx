@@ -28,7 +28,7 @@ export default async function ManufacturingPage() {
       <PageHero
         eyebrow="Manufacturing"
         title="Hot-forging equipment, four workshops and inspection"
-        description="Capability facts supplied by RunCing. Further figures are added here only once they are confirmed."
+        description="Explore RunCing's hot-forging equipment, workshop organization and inspection workflow."
         crumbs={[{ label: 'Manufacturing' }]}
       />
       <Section labelledBy="capability-title">
@@ -74,7 +74,7 @@ export default async function ManufacturingPage() {
       {site.companyMedia.length ? (
         <Section labelledBy="workshop-gallery-title" tone="stage">
           <Reveal>
-            <SectionHeading id="workshop-gallery-title" eyebrow="Customer-supplied views" title="Facility and equipment gallery" description="These images come directly from RunCing's supplied company materials." />
+            <SectionHeading id="workshop-gallery-title" eyebrow="Production environment" title="Facility and equipment gallery" description="See the spaces and equipment that support machining, assembly and material handling." />
           </Reveal>
           <ul className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {site.companyMedia.map((src, index) => (
@@ -95,7 +95,7 @@ export default async function ManufacturingPage() {
             id="line-title"
             eyebrow="Capability line"
             title="From material to inspection"
-            description="The stated capabilities in sequence. This is an overview of what is supplied, not a process-time commitment."
+            description="Follow the core production stages from material preparation through inspection."
           />
         </Reveal>
         <div className="mt-12">
