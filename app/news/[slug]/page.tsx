@@ -4,6 +4,7 @@ import { notFound } from 'next/navigation'
 import { getArticleBySlug, getArticles } from '@/lib/data'
 import { PageHero } from '@/components/site/page-hero'
 import { CtaLink, Section } from '@/components/site/primitives'
+import { Reveal } from '@/components/site/reveal'
 
 export const revalidate = 60
 export const dynamicParams = true
@@ -57,7 +58,8 @@ export default async function ArticlePage({
         </p>
       </PageHero>
       <Section labelledBy="article-body-title">
-        <article className="mx-auto max-w-3xl">
+        <Reveal>
+          <article className="mx-auto max-w-3xl">
           <h2 id="article-body-title" className="sr-only">
             Article
           </h2>
@@ -83,7 +85,8 @@ export default async function ArticlePage({
             </CtaLink>
             <CtaLink href="/contact#rfq">Request a quote</CtaLink>
           </div>
-        </article>
+          </article>
+        </Reveal>
       </Section>
     </>
   )

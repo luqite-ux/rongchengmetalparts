@@ -4,6 +4,7 @@ import { Newspaper } from 'lucide-react'
 import { getArticles, getPageMeta } from '@/lib/data'
 import { PageHero } from '@/components/site/page-hero'
 import { CtaLink, Section } from '@/components/site/primitives'
+import { Reveal } from '@/components/site/reveal'
 import {
   Empty,
   EmptyContent,
@@ -40,7 +41,8 @@ export default async function NewsPage() {
           Articles
         </h2>
         {articles.length === 0 ? (
-          <Empty className="border-2 border-dashed">
+          <Reveal>
+            <Empty className="border-2 border-dashed">
             <EmptyHeader>
               <EmptyMedia>
                 <Newspaper aria-hidden="true" />
@@ -59,15 +61,17 @@ export default async function NewsPage() {
                 </CtaLink>
               </div>
             </EmptyContent>
-          </Empty>
+            </Empty>
+          </Reveal>
         ) : (
           <ul className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {articles.map((article) => (
+            {articles.map((article, articleIndex) => (
               <li key={article.slug}>
-                <Link
-                  href={`/news/${article.slug}`}
-                  className="flex h-full min-h-11 flex-col border-2 border-border bg-card p-6 transition-colors duration-200 hover:border-primary motion-reduce:transition-none"
-                >
+                <Reveal delay={(articleIndex % 3) * 70} className="h-full">
+                  <Link
+                    href={`/news/${article.slug}`}
+                    className="flex h-full min-h-11 flex-col border-2 border-border bg-card p-6 transition-colors duration-200 hover:border-primary motion-reduce:transition-none"
+                  >
                   <time
                     dateTime={article.publishedAt}
                     className="font-mono text-xs text-muted-foreground"
@@ -83,7 +87,8 @@ export default async function NewsPage() {
                     {article.excerpt}
                   </p>
                   <span className="mt-auto pt-5 text-sm font-semibold text-primary">Read article →</span>
-                </Link>
+                  </Link>
+                </Reveal>
               </li>
             ))}
           </ul>
