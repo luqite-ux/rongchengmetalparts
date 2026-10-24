@@ -18,6 +18,8 @@ import { ProcessSection } from '@/components/home/process-section'
 import { FaqSection } from '@/components/home/faq-section'
 import { RfqSection } from '@/components/rfq/rfq-section'
 
+export const revalidate = 60
+
 export const metadata: Metadata = {
   title: { absolute: 'RunCing Tech | Valves and connector assemblies manufacturer' },
   description:

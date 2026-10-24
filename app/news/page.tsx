@@ -78,10 +78,11 @@ export default async function NewsPage() {
                       year: 'numeric',
                     })}
                   </time>
-                  <h3 className="mt-2 text-lg font-semibold tracking-tight">{article.title}</h3>
-                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                  <h3 className="mt-2 line-clamp-2 text-lg font-semibold tracking-tight">{article.title}</h3>
+                  <p className="mt-2 line-clamp-3 flex-1 text-sm leading-relaxed text-muted-foreground">
                     {article.excerpt}
                   </p>
+                  <span className="mt-auto pt-5 text-sm font-semibold text-primary">Read article →</span>
                 </Link>
               </li>
             ))}
