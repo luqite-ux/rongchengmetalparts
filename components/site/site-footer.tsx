@@ -36,8 +36,6 @@ export function SiteFooter({
           </div>
           <p className="text-sm leading-relaxed text-white">
             {site.legalNameEn}
-            <br />
-            <span lang="zh-CN">{site.legalNameZh}</span>
           </p>
         </div>
 

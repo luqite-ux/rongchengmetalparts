@@ -56,8 +56,6 @@ export function RfqSection({
                 <p className="text-base leading-relaxed">
                   {site.legalNameEn}
                   <br />
-                  <span lang="zh-CN">{site.legalNameZh}</span>
-                  <br />
                   {site.streetAddress ? (
                     <>
                       {site.streetAddress}

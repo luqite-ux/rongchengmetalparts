@@ -351,7 +351,6 @@ export const aboutContent = {
   ],
   facts: [
     { label: 'English name', value: 'RunCing Electromechanical Technology Co., Ltd.' },
-    { label: 'Chinese legal entity', value: '宁波荣城机电科技有限公司' },
     { label: 'Products', value: 'Ball valves, valve assemblies, connector assemblies' },
     { label: 'Materials', value: 'Brass, stainless steel, aluminum' },
     { label: 'Manufacturing', value: 'Hot-forging equipment, four workshops' },
