@@ -1,0 +1,285 @@
+{
+  "schemaVersion": 1,
+  "templateFamily": "industrial-materials",
+  "navigation": [
+    {
+      "label": "Home",
+      "route": "/",
+      "level": 1,
+      "source": "Customer requirement plus peer product-first navigation",
+      "referencePeer": "products.swagelok.com"
+    },
+    {
+      "label": "Products",
+      "route": "/products",
+      "level": 1,
+      "source": "Workbook product catalog",
+      "referencePeer": "products.swagelok.com"
+    },
+    {
+      "label": "Ball Valve Series",
+      "route": "/products?category=ball-valve-series",
+      "level": 2,
+      "source": "Workbook row 4 and exact image folder",
+      "referencePeer": "english.hy-lok.com"
+    },
+    {
+      "label": "Valve Assemblies",
+      "route": "/products?category=valve-assemblies",
+      "level": 2,
+      "source": "Workbook rows 5-7",
+      "referencePeer": "discover.parker.com"
+    },
+    {
+      "label": "Connector Series",
+      "route": "/products?category=connector-series",
+      "level": 2,
+      "source": "Workbook rows 8-9",
+      "referencePeer": "products.swagelok.com"
+    },
+    {
+      "label": "Applications",
+      "route": "/applications",
+      "level": 1,
+      "source": "FAQ application evidence",
+      "referencePeer": "discover.parker.com"
+    },
+    {
+      "label": "Manufacturing",
+      "route": "/manufacturing",
+      "level": 1,
+      "source": "Enterprise factory and equipment evidence",
+      "referencePeer": "english.hy-lok.com"
+    },
+    {
+      "label": "About",
+      "route": "/about",
+      "level": 1,
+      "source": "Verified enterprise information",
+      "referencePeer": "english.hy-lok.com"
+    },
+    {
+      "label": "Contact",
+      "route": "/contact",
+      "level": 1,
+      "source": "Owner delivery email and customer address",
+      "referencePeer": "discover.parker.com"
+    }
+  ],
+  "productTaxonomy": [
+    {
+      "customerProduct": "Air Line Ball Valve",
+      "category": "Ball Valve Series",
+      "route": "/products/air-line-ball-valve",
+      "source": "Workbook 产品信息 rows 4-9 and exact-named image folders"
+    },
+    {
+      "customerProduct": "Brass Valve Assembly",
+      "category": "Valve Assemblies",
+      "route": "/products/brass-valve-assembly",
+      "source": "Workbook 产品信息 rows 4-9 and exact-named image folders"
+    },
+    {
+      "customerProduct": "Stainless Steel Valve Assembly",
+      "category": "Valve Assemblies",
+      "route": "/products/stainless-steel-valve-assembly",
+      "source": "Workbook 产品信息 rows 4-9 and exact-named image folders"
+    },
+    {
+      "customerProduct": "Aluminum Valve Assembly",
+      "category": "Valve Assemblies",
+      "route": "/products/aluminum-valve-assembly",
+      "source": "Workbook 产品信息 rows 4-9 and exact-named image folders"
+    },
+    {
+      "customerProduct": "Elbow Assembly",
+      "category": "Connector Series",
+      "route": "/products/elbow-assembly",
+      "source": "Workbook 产品信息 rows 4-9 and exact-named image folders"
+    },
+    {
+      "customerProduct": "Straight Connector",
+      "category": "Connector Series",
+      "route": "/products/straight-connector",
+      "source": "Workbook 产品信息 rows 4-9 and exact-named image folders"
+    }
+  ],
+  "homepageSections": [
+    {
+      "sectionId": "hero",
+      "type": "hero",
+      "informationGain": "What does RunCing supply and what should a buyer do next?",
+      "purpose": "What does RunCing supply and what should a buyer do next?",
+      "factSource": "Workbook enterprise/product sheets and three customer banners",
+      "contentType": "hero",
+      "desktopStrategy": "full-width customer banner with live copy and primary CTAs",
+      "mobile390Strategy": "separate mobile composition with subject-safe crop and stacked CTAs",
+      "componentDecision": "selected product carousel candidate",
+      "referencePeers": [
+        "products.swagelok.com",
+        "discover.parker.com",
+        "english.hy-lok.com"
+      ]
+    },
+    {
+      "sectionId": "product-families",
+      "type": "catalog",
+      "informationGain": "How should buyers enter the three real product families?",
+      "purpose": "How should buyers enter the three real product families?",
+      "factSource": "Workbook product rows and folder taxonomy",
+      "contentType": "category-grid",
+      "desktopStrategy": "three comparable family cards with direct filtered routes",
+      "mobile390Strategy": "single-column tap targets with full product subjects",
+      "componentDecision": "selected ordered-card candidate",
+      "referencePeers": [
+        "products.swagelok.com",
+        "discover.parker.com",
+        "english.hy-lok.com"
+      ]
+    },
+    {
+      "sectionId": "featured-products",
+      "type": "catalog",
+      "informationGain": "Which six supplied products are available for detailed review?",
+      "purpose": "Which six supplied products are available for detailed review?",
+      "factSource": "Six workbook product rows and 39 independent product images",
+      "contentType": "product-grid",
+      "desktopStrategy": "six clean contain-image cards with material labels",
+      "mobile390Strategy": "one/two-column grid with preserved subject",
+      "componentDecision": "selected product carousel candidate",
+      "referencePeers": [
+        "products.swagelok.com",
+        "discover.parker.com",
+        "english.hy-lok.com"
+      ]
+    },
+    {
+      "sectionId": "applications",
+      "type": "applications",
+      "informationGain": "Which supplied application areas may these parts support?",
+      "purpose": "Which supplied application areas may these parts support?",
+      "factSource": "FAQ application row",
+      "contentType": "icon-cards",
+      "desktopStrategy": "application categories linked to relevant products",
+      "mobile390Strategy": "stacked semantic cards with distinct icons",
+      "componentDecision": "selected ordered-card candidate",
+      "referencePeers": [
+        "products.swagelok.com",
+        "discover.parker.com",
+        "english.hy-lok.com"
+      ]
+    },
+    {
+      "sectionId": "material-options",
+      "type": "technical",
+      "informationGain": "How do brass, stainless steel and aluminum variants differ as catalog choices?",
+      "purpose": "How do brass, stainless steel and aluminum variants differ as catalog choices?",
+      "factSource": "Workbook product names, descriptions and specification rows",
+      "contentType": "comparison",
+      "desktopStrategy": "three material columns without unsupported performance claims",
+      "mobile390Strategy": "horizontal-safe stacked comparison",
+      "componentDecision": "custom implementation; no package fit",
+      "referencePeers": [
+        "products.swagelok.com",
+        "discover.parker.com",
+        "english.hy-lok.com"
+      ]
+    },
+    {
+      "sectionId": "manufacturing-capability",
+      "type": "capability",
+      "informationGain": "What authentic manufacturing evidence can buyers inspect?",
+      "purpose": "What authentic manufacturing evidence can buyers inspect?",
+      "factSource": "Enterprise profile, scale, equipment, capacity and factory images",
+      "contentType": "image-story",
+      "desktopStrategy": "asymmetric real factory/workshop narrative with sourced facts",
+      "mobile390Strategy": "single-column image/text alternation",
+      "componentDecision": "selected ordered-card reveal mechanism",
+      "referencePeers": [
+        "products.swagelok.com",
+        "discover.parker.com",
+        "english.hy-lok.com"
+      ]
+    },
+    {
+      "sectionId": "quality-and-certification",
+      "type": "trust",
+      "informationGain": "What quality-process and certification evidence is actually supplied?",
+      "purpose": "What quality-process and certification evidence is actually supplied?",
+      "factSource": "Enterprise certification row and FAQ inspection-report rows",
+      "contentType": "trust-panel",
+      "desktopStrategy": "quality checkpoints plus cautious certification text",
+      "mobile390Strategy": "compact list with readable labels",
+      "componentDecision": "custom implementation; certificate carousel rejected",
+      "referencePeers": [
+        "products.swagelok.com",
+        "discover.parker.com",
+        "english.hy-lok.com"
+      ]
+    },
+    {
+      "sectionId": "customization",
+      "type": "service",
+      "informationGain": "What can be customized and what inputs should a buyer provide?",
+      "purpose": "What can be customized and what inputs should a buyer provide?",
+      "factSource": "FAQ customization, sample and OEM/ODM rows",
+      "contentType": "option-matrix",
+      "desktopStrategy": "material/size/interface inputs and sample discussion path",
+      "mobile390Strategy": "stacked option rows plus RFQ link",
+      "componentDecision": "selected ordered-card candidate",
+      "referencePeers": [
+        "products.swagelok.com",
+        "discover.parker.com",
+        "english.hy-lok.com"
+      ]
+    },
+    {
+      "sectionId": "cooperation-process",
+      "type": "process",
+      "informationGain": "How does an inquiry move through technical review to shipment?",
+      "purpose": "How does an inquiry move through technical review to shipment?",
+      "factSource": "FAQ sample, lead-time and shipment rows",
+      "contentType": "process",
+      "desktopStrategy": "neutral five-step collaboration path",
+      "mobile390Strategy": "vertical path without sticky cards",
+      "componentDecision": "custom bounded line motion",
+      "referencePeers": [
+        "products.swagelok.com",
+        "discover.parker.com",
+        "english.hy-lok.com"
+      ]
+    },
+    {
+      "sectionId": "faq",
+      "type": "support",
+      "informationGain": "Which source-backed procurement questions can be answered now?",
+      "purpose": "Which source-backed procurement questions can be answered now?",
+      "factSource": "FAQ sheet excluding warranty and commitment-risk rows",
+      "contentType": "accordion",
+      "desktopStrategy": "accessible concise accordion",
+      "mobile390Strategy": "touch-friendly native disclosure stack",
+      "componentDecision": "accordion component candidate",
+      "referencePeers": [
+        "products.swagelok.com",
+        "discover.parker.com",
+        "english.hy-lok.com"
+      ]
+    },
+    {
+      "sectionId": "rfq-contact",
+      "type": "conversion",
+      "informationGain": "How can a buyer send the product and requirement context?",
+      "purpose": "How can a buyer send the product and requirement context?",
+      "factSource": "Owner-provided formal email and verified address",
+      "contentType": "form",
+      "desktopStrategy": "split RFQ context and form with CAPTCHA slot",
+      "mobile390Strategy": "single-column form and persistent context",
+      "componentDecision": "custom implementation",
+      "referencePeers": [
+        "products.swagelok.com",
+        "discover.parker.com",
+        "english.hy-lok.com"
+      ]
+    }
+  ]
+}

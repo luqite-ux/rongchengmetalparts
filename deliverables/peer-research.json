@@ -1,0 +1,262 @@
+{
+  "schemaVersion": 1,
+  "customerIndustry": "industrial valves, connectors and metal component assemblies",
+  "products": [
+    "air line ball valve",
+    "brass/stainless/aluminum valve assemblies",
+    "elbow and straight connectors"
+  ],
+  "targetBuyers": [
+    "commercial vehicle and trailer component buyers",
+    "industrial equipment and fluid-system procurement teams",
+    "OEM/ODM sourcing engineers"
+  ],
+  "peers": [
+    {
+      "name": "Swagelok",
+      "url": "https://products.swagelok.com/en",
+      "source": "web",
+      "normalizedDomain": "products.swagelok.com",
+      "pagesReviewed": [
+        {
+          "kind": "home",
+          "url": "https://products.swagelok.com/en",
+          "observation": "Product proposition; selection support; category taxonomy; local service CTA",
+          "checkedAt": "2026-10-24T13:20:00.000Z",
+          "evidence": {
+            "path": "deliverables/blueprint-evidence/swagelok-review.txt",
+            "sha256": "f36eaa72ac8fcf6803631c0d139f38b5b7fea56fd66190c117eae0ee14800687"
+          }
+        },
+        {
+          "kind": "navigation",
+          "url": "https://products.swagelok.com/en",
+          "observation": "Products stays primary; categories deepen progressively; selection assistance remains visible",
+          "checkedAt": "2026-10-24T13:20:00.000Z",
+          "evidence": {
+            "path": "deliverables/blueprint-evidence/swagelok-review.txt",
+            "sha256": "f36eaa72ac8fcf6803631c0d139f38b5b7fea56fd66190c117eae0ee14800687"
+          }
+        },
+        {
+          "kind": "products",
+          "url": "https://products.swagelok.com/en",
+          "observation": "Top-level fittings and valves lead into specific component families and selection tools.",
+          "checkedAt": "2026-10-24T13:20:00.000Z",
+          "evidence": {
+            "path": "deliverables/blueprint-evidence/swagelok-review.txt",
+            "sha256": "f36eaa72ac8fcf6803631c0d139f38b5b7fea56fd66190c117eae0ee14800687"
+          }
+        }
+      ],
+      "overseasEvidence": {
+        "country": "United States",
+        "whyCompetitor": "Global fluid-system component manufacturer with a mature fittings/valves selection path comparable to RunCing’s B2B catalog task.",
+        "sourceUrl": "https://www.swagelok.com/en/about/our-company"
+      },
+      "homeSections": [
+        "Product proposition",
+        "selection support",
+        "category taxonomy",
+        "local service CTA"
+      ],
+      "navigation": [
+        "Products stays primary",
+        "categories deepen progressively",
+        "selection assistance remains visible"
+      ],
+      "productTaxonomy": [
+        "Fittings",
+        "Valves",
+        "Assemblies",
+        "Selection resources"
+      ],
+      "adopt": [
+        "product-first hierarchy",
+        "selection support",
+        "category-to-detail progression"
+      ],
+      "reject": [
+        "account and pricing complexity",
+        "large-enterprise breadth",
+        "warranty claims",
+        "third-party facts and assets"
+      ],
+      "evidence": [
+        {
+          "url": "https://products.swagelok.com/en",
+          "observation": "Product proposition; selection support; category taxonomy; local service CTA"
+        },
+        {
+          "url": "https://products.swagelok.com/en",
+          "observation": "Top-level fittings and valves lead into specific component families and selection tools."
+        }
+      ]
+    },
+    {
+      "name": "Parker Hannifin Instrumentation Products",
+      "url": "https://discover.parker.com/ING_AP_Catalogs",
+      "source": "web",
+      "normalizedDomain": "discover.parker.com",
+      "pagesReviewed": [
+        {
+          "kind": "home",
+          "url": "https://discover.parker.com/ING_AP_Catalogs",
+          "observation": "Instrumentation proposition; technical guide; product families; engineer contact",
+          "checkedAt": "2026-10-24T13:20:00.000Z",
+          "evidence": {
+            "path": "deliverables/blueprint-evidence/parker-review.txt",
+            "sha256": "017ebe3252e6a00d5002a13f4a380aacc520111619ff87f477d8affb35a6e8ec"
+          }
+        },
+        {
+          "kind": "navigation",
+          "url": "https://discover.parker.com/ING_AP_Catalogs",
+          "observation": "Major families remain scannable; downloads and contact support selection; stacked mobile sequence",
+          "checkedAt": "2026-10-24T13:20:00.000Z",
+          "evidence": {
+            "path": "deliverables/blueprint-evidence/parker-review.txt",
+            "sha256": "017ebe3252e6a00d5002a13f4a380aacc520111619ff87f477d8affb35a6e8ec"
+          }
+        },
+        {
+          "kind": "products",
+          "url": "https://discover.parker.com/ING_AP_Fittings",
+          "observation": "Fitting systems are grouped by technical family with direct catalog/resource actions.",
+          "checkedAt": "2026-10-24T13:20:00.000Z",
+          "evidence": {
+            "path": "deliverables/blueprint-evidence/parker-review.txt",
+            "sha256": "017ebe3252e6a00d5002a13f4a380aacc520111619ff87f477d8affb35a6e8ec"
+          }
+        }
+      ],
+      "overseasEvidence": {
+        "country": "United States",
+        "whyCompetitor": "International industrial instrumentation manufacturer whose fittings/valves landing journey addresses similar engineering selection needs.",
+        "sourceUrl": "https://www.parker.com/us/en/about-parker.html"
+      },
+      "homeSections": [
+        "Instrumentation proposition",
+        "technical guide",
+        "product families",
+        "engineer contact"
+      ],
+      "navigation": [
+        "Major families remain scannable",
+        "downloads and contact support selection",
+        "stacked mobile sequence"
+      ],
+      "productTaxonomy": [
+        "Tube Fittings",
+        "Tubing",
+        "Valves",
+        "Regulators",
+        "Tools"
+      ],
+      "adopt": [
+        "application-led family summaries",
+        "technical resources",
+        "clear engineer/RFQ route"
+      ],
+      "reject": [
+        "gated download form",
+        "unrelated divisions",
+        "Parker claims and proprietary imagery"
+      ],
+      "evidence": [
+        {
+          "url": "https://discover.parker.com/ING_AP_Catalogs",
+          "observation": "Instrumentation proposition; technical guide; product families; engineer contact"
+        },
+        {
+          "url": "https://discover.parker.com/ING_AP_Fittings",
+          "observation": "Fitting systems are grouped by technical family with direct catalog/resource actions."
+        }
+      ]
+    },
+    {
+      "name": "Hy-Lok Corporation",
+      "url": "https://english.hy-lok.com/",
+      "source": "web",
+      "normalizedDomain": "english.hy-lok.com",
+      "pagesReviewed": [
+        {
+          "kind": "home",
+          "url": "https://english.hy-lok.com/",
+          "observation": "Fittings; valves; package solutions; industries and network trust",
+          "checkedAt": "2026-10-24T13:20:00.000Z",
+          "evidence": {
+            "path": "deliverables/blueprint-evidence/hylok-review.txt",
+            "sha256": "23e21c8bade822eb7e8e698ff0958195b42cd79ebcdcc6f8af7dcf10d15fade1"
+          }
+        },
+        {
+          "kind": "navigation",
+          "url": "https://english.hy-lok.com/",
+          "observation": "About; Products; Industries; Service Network; Resources; Contact",
+          "checkedAt": "2026-10-24T13:20:00.000Z",
+          "evidence": {
+            "path": "deliverables/blueprint-evidence/hylok-review.txt",
+            "sha256": "23e21c8bade822eb7e8e698ff0958195b42cd79ebcdcc6f8af7dcf10d15fade1"
+          }
+        },
+        {
+          "kind": "products",
+          "url": "https://english.hy-lok.com/resources/ProductCatalog.hylok?categoryId=VALVES",
+          "observation": "Valve catalog is grouped into families and series with materials, features and catalog actions.",
+          "checkedAt": "2026-10-24T13:20:00.000Z",
+          "evidence": {
+            "path": "deliverables/blueprint-evidence/hylok-review.txt",
+            "sha256": "23e21c8bade822eb7e8e698ff0958195b42cd79ebcdcc6f8af7dcf10d15fade1"
+          }
+        }
+      ],
+      "overseasEvidence": {
+        "country": "Republic of Korea",
+        "whyCompetitor": "Korean manufacturer of tube fittings, valves and fluid-system components with an international product and service network.",
+        "sourceUrl": "https://www.hy-lok.com/service/Network.hylok"
+      },
+      "homeSections": [
+        "Fittings",
+        "valves",
+        "package solutions",
+        "industries and network trust"
+      ],
+      "navigation": [
+        "About",
+        "Products",
+        "Industries",
+        "Service Network",
+        "Resources",
+        "Contact"
+      ],
+      "productTaxonomy": [
+        "Tube Fittings",
+        "Valves",
+        "Package Solutions",
+        "Series catalogs"
+      ],
+      "adopt": [
+        "material and feature comparison",
+        "series-level detail",
+        "visible trust/contact path"
+      ],
+      "reject": [
+        "unfiltered catalog length",
+        "foreign certifications",
+        "Hy-Lok claims and assets"
+      ],
+      "evidence": [
+        {
+          "url": "https://english.hy-lok.com/",
+          "observation": "Fittings; valves; package solutions; industries and network trust"
+        },
+        {
+          "url": "https://english.hy-lok.com/resources/ProductCatalog.hylok?categoryId=VALVES",
+          "observation": "Valve catalog is grouped into families and series with materials, features and catalog actions."
+        }
+      ]
+    }
+  ],
+  "caseIntake": []
+}

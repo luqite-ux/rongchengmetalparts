@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "queries": [
+    {
+      "query": "scroll",
+      "at": "2026-10-24T13:22:06.166Z",
+      "catalogHash": "2d190f64d6275820fc8fb818f19c0f360155d8f4545790b900628e67c200afdd",
+      "ids": [
+        "original-scroll-motion",
+        "original-parallax-motion",
+        "original-header-motion"
+      ]
+    },
+    {
+      "query": "hover",
+      "at": "2026-10-24T13:22:06.424Z",
+      "catalogHash": "2d190f64d6275820fc8fb818f19c0f360155d8f4545790b900628e67c200afdd",
+      "ids": [
+        "original-hover-motion",
+        "original-cta-motion"
+      ]
+    }
+  ],
+  "decision": "none",
+  "items": [],
+  "reason": "The available library components do not match the customer-specific three-banner, valve-product-contain and sourced manufacturing-flow composition; implement the four bounded scenes from motion-plan.md without misrepresenting a library component as adopted."
+}

@@ -1,0 +1,155 @@
+{
+  "schemaVersion": 1,
+  "projectId": "cb1ad140-c082-4555-9e82-384c67c07871",
+  "sections": [
+    {
+      "sectionId": "hero",
+      "query": "hero industrial B2B responsive component",
+      "candidates": [
+        {
+          "id": "original-product-motion",
+          "version": "1.0.0+9f8b0c8bf2fb39ff107a8279c5504da87a8b073f7fc8b2d36e81845cb5ec7af3",
+          "packageHash": "9f8b0c8bf2fb39ff107a8279c5504da87a8b073f7fc8b2d36e81845cb5ec7af3",
+          "productionReady": false,
+          "confidence": 0.25
+        }
+      ],
+      "decision": "selected",
+      "componentId": "original-product-motion",
+      "version": "1.0.0+9f8b0c8bf2fb39ff107a8279c5504da87a8b073f7fc8b2d36e81845cb5ec7af3",
+      "packageHash": "9f8b0c8bf2fb39ff107a8279c5504da87a8b073f7fc8b2d36e81845cb5ec7af3",
+      "location": "home:hero",
+      "importPath": "@/components/original-product-motion"
+    },
+    {
+      "sectionId": "product-families",
+      "query": "product-families industrial B2B responsive component",
+      "candidates": [
+        {
+          "id": "original-cards-motion",
+          "version": "1.0.0+d44c55665780ab848d5cea18ea68edfc3367252b061a4e591cec3378a3576ae0",
+          "packageHash": "d44c55665780ab848d5cea18ea68edfc3367252b061a4e591cec3378a3576ae0",
+          "productionReady": false,
+          "confidence": 0.25
+        }
+      ],
+      "decision": "selected",
+      "componentId": "original-cards-motion",
+      "version": "1.0.0+d44c55665780ab848d5cea18ea68edfc3367252b061a4e591cec3378a3576ae0",
+      "packageHash": "d44c55665780ab848d5cea18ea68edfc3367252b061a4e591cec3378a3576ae0",
+      "location": "home:product-families",
+      "importPath": "@/components/original-cards-motion"
+    },
+    {
+      "sectionId": "featured-products",
+      "query": "featured-products industrial B2B responsive component",
+      "candidates": [
+        {
+          "id": "original-product-motion",
+          "version": "1.0.0+9f8b0c8bf2fb39ff107a8279c5504da87a8b073f7fc8b2d36e81845cb5ec7af3",
+          "packageHash": "9f8b0c8bf2fb39ff107a8279c5504da87a8b073f7fc8b2d36e81845cb5ec7af3",
+          "productionReady": false,
+          "confidence": 0.25
+        }
+      ],
+      "decision": "selected",
+      "componentId": "original-product-motion",
+      "version": "1.0.0+9f8b0c8bf2fb39ff107a8279c5504da87a8b073f7fc8b2d36e81845cb5ec7af3",
+      "packageHash": "9f8b0c8bf2fb39ff107a8279c5504da87a8b073f7fc8b2d36e81845cb5ec7af3",
+      "location": "home:featured-products",
+      "importPath": "@/components/original-product-motion"
+    },
+    {
+      "sectionId": "applications",
+      "query": "applications industrial B2B responsive component",
+      "candidates": [
+        {
+          "id": "original-cards-motion",
+          "version": "1.0.0+d44c55665780ab848d5cea18ea68edfc3367252b061a4e591cec3378a3576ae0",
+          "packageHash": "d44c55665780ab848d5cea18ea68edfc3367252b061a4e591cec3378a3576ae0",
+          "productionReady": false,
+          "confidence": 0.25
+        }
+      ],
+      "decision": "selected",
+      "componentId": "original-cards-motion",
+      "version": "1.0.0+d44c55665780ab848d5cea18ea68edfc3367252b061a4e591cec3378a3576ae0",
+      "packageHash": "d44c55665780ab848d5cea18ea68edfc3367252b061a4e591cec3378a3576ae0",
+      "location": "home:applications",
+      "importPath": "@/components/original-cards-motion"
+    },
+    {
+      "sectionId": "material-options",
+      "query": "material-options industrial B2B responsive component",
+      "candidates": [],
+      "decision": "no-match",
+      "receipt": "Unified Anli MCP search returned no packaged section-specific candidate suitable for this evidence density; use a scoped accessible local implementation."
+    },
+    {
+      "sectionId": "manufacturing-capability",
+      "query": "manufacturing-capability industrial B2B responsive component",
+      "candidates": [
+        {
+          "id": "original-cards-motion",
+          "version": "1.0.0+d44c55665780ab848d5cea18ea68edfc3367252b061a4e591cec3378a3576ae0",
+          "packageHash": "d44c55665780ab848d5cea18ea68edfc3367252b061a4e591cec3378a3576ae0",
+          "productionReady": false,
+          "confidence": 0.25
+        }
+      ],
+      "decision": "selected",
+      "componentId": "original-cards-motion",
+      "version": "1.0.0+d44c55665780ab848d5cea18ea68edfc3367252b061a4e591cec3378a3576ae0",
+      "packageHash": "d44c55665780ab848d5cea18ea68edfc3367252b061a4e591cec3378a3576ae0",
+      "location": "home:manufacturing-capability",
+      "importPath": "@/components/original-cards-motion"
+    },
+    {
+      "sectionId": "quality-and-certification",
+      "query": "quality-and-certification industrial B2B responsive component",
+      "candidates": [],
+      "decision": "no-match",
+      "receipt": "Unified Anli MCP search returned no packaged section-specific candidate suitable for this evidence density; use a scoped accessible local implementation."
+    },
+    {
+      "sectionId": "customization",
+      "query": "customization industrial B2B responsive component",
+      "candidates": [
+        {
+          "id": "original-cards-motion",
+          "version": "1.0.0+d44c55665780ab848d5cea18ea68edfc3367252b061a4e591cec3378a3576ae0",
+          "packageHash": "d44c55665780ab848d5cea18ea68edfc3367252b061a4e591cec3378a3576ae0",
+          "productionReady": false,
+          "confidence": 0.25
+        }
+      ],
+      "decision": "selected",
+      "componentId": "original-cards-motion",
+      "version": "1.0.0+d44c55665780ab848d5cea18ea68edfc3367252b061a4e591cec3378a3576ae0",
+      "packageHash": "d44c55665780ab848d5cea18ea68edfc3367252b061a4e591cec3378a3576ae0",
+      "location": "home:customization",
+      "importPath": "@/components/original-cards-motion"
+    },
+    {
+      "sectionId": "cooperation-process",
+      "query": "cooperation-process industrial B2B responsive component",
+      "candidates": [],
+      "decision": "no-match",
+      "receipt": "Unified Anli MCP search returned no packaged section-specific candidate suitable for this evidence density; use a scoped accessible local implementation."
+    },
+    {
+      "sectionId": "faq",
+      "query": "faq industrial B2B responsive component",
+      "candidates": [],
+      "decision": "no-match",
+      "receipt": "Unified Anli MCP search returned no packaged section-specific candidate suitable for this evidence density; use a scoped accessible local implementation."
+    },
+    {
+      "sectionId": "rfq-contact",
+      "query": "rfq-contact industrial B2B responsive component",
+      "candidates": [],
+      "decision": "no-match",
+      "receipt": "Unified Anli MCP search returned no packaged section-specific candidate suitable for this evidence density; use a scoped accessible local implementation."
+    }
+  ]
+}

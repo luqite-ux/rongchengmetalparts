@@ -1,0 +1,7 @@
+Peer review: Hy-Lok Corporation (Busan, Korea; official global fluid-system components site)
+Checked at: 2026-10-24T13:20:00.000Z
+Home: https://english.hy-lok.com/ — positions fittings, valves and package solutions as the three principal operations and exposes global navigation.
+Navigation: About, Products, Industries, Service Network and Resources reflect a due-diligence and selection journey; mobile should retain Products and Contact without a deep hover-only dependency.
+Products: https://english.hy-lok.com/resources/ProductCatalog.hylok?categoryId=VALVES — long technical catalog broken into valve families, series, materials, features and catalog actions.
+Adopt: material/feature comparison, series-level detail and visible contact/network trust path.
+Reject: the very long unfiltered catalog, foreign certifications not supplied by the customer, Hy-Lok claims, text and assets.

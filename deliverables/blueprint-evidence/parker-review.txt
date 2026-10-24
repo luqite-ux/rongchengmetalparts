@@ -1,0 +1,7 @@
+Peer review: Parker Hannifin Instrumentation Products (United States/global motion and control company)
+Checked at: 2026-10-24T13:19:00.000Z
+Home/landing: https://discover.parker.com/ING_AP_Catalogs — combines a concise instrumentation-product proposition, selection-guide download, engineer contact form and vertically sequenced product families.
+Navigation: the landing page keeps major families (tube fittings, tubing, valves, regulators, tools) visibly scannable; a mobile layout should preserve the same hierarchy as stacked cards and a compact menu.
+Products: https://discover.parker.com/ING_AP_Fittings — groups fitting systems and catalog resources by technical family, making comparison and documentation the main buyer task.
+Adopt: application-led family summaries, technical-resource visibility and a clear engineer/RFQ path.
+Reject: gated download form, unrelated Parker business lines, product claims, imagery and proprietary names.

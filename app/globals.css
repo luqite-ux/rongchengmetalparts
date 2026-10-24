@@ -1,0 +1,179 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --background: #ffffff;
+  --foreground: #17211b;
+  --card: #ffffff;
+  --card-foreground: #17211b;
+  --popover: #ffffff;
+  --popover-foreground: #17211b;
+  --primary: #006a17;
+  --primary-foreground: #ffffff;
+  --secondary: #eef3ef;
+  --secondary-foreground: #17211b;
+  --muted: #f3f6f4;
+  --muted-foreground: #44514a;
+  --accent: #e8f1ea;
+  --accent-foreground: #004d11;
+  --destructive: #b3261e;
+  --destructive-foreground: #ffffff;
+  --border: #d9e2dc;
+  --input: #7f9086;
+  --ring: #006a17;
+  --stage: #f4f7f5;
+  --brand-red: #e2001a;
+  --brand-blue: #1b2f94;
+  --brand-deep: #004d11;
+  --radius: 0.375rem;
+}
+
+@theme inline {
+  --font-sans: var(--font-geist), 'Geist Fallback', system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), 'Geist Mono Fallback', ui-monospace, monospace;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-stage: var(--stage);
+  --color-brand-red: var(--brand-red);
+  --color-brand-blue: var(--brand-blue);
+  --color-brand-deep: var(--brand-deep);
+  --radius-sm: calc(var(--radius) - 2px);
+  --radius-md: var(--radius);
+  --radius-lg: calc(var(--radius) + 2px);
+  --radius-xl: calc(var(--radius) + 6px);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5.5rem;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  :focus-visible {
+    outline: 3px solid var(--ring);
+    outline-offset: 2px;
+  }
+}
+
+/* Product stage: product photos have pale backgrounds; multiply lets them sit on one coherent stage colour. */
+.product-stage {
+  background-color: var(--stage);
+  isolation: isolate;
+}
+.product-stage img {
+  mix-blend-mode: multiply;
+}
+
+/* Hero: per-slide image composition for 390px and desktop */
+.hero-image {
+  object-position: var(--pos-mobile, 50% 50%);
+}
+@media (min-width: 1024px) {
+  .hero-image {
+    object-position: var(--pos-desktop, 50% 50%);
+  }
+}
+
+.hero-slide {
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity 600ms ease,
+    visibility 0s linear 600ms;
+}
+.hero-slide[data-active='true'] {
+  opacity: 1;
+  visibility: visible;
+  transition:
+    opacity 600ms ease,
+    visibility 0s linear 0s;
+}
+
+/* Viewport reveal: content is visible by default; JS only hides below-the-fold items */
+.reveal {
+  transition:
+    opacity 500ms ease-out,
+    transform 500ms ease-out;
+}
+.reveal[data-reveal='hidden'] {
+  opacity: 0;
+  transform: translateY(14px);
+}
+
+/* Capability / process line draw */
+.draw-line {
+  transform-origin: left center;
+  transition: transform 900ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+[data-reveal='hidden'] .draw-line {
+  transform: scaleX(0);
+}
+.draw-line-y {
+  transform-origin: center top;
+  transition: transform 900ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+[data-reveal='hidden'] .draw-line-y {
+  transform: scaleY(0);
+}
+.draw-node {
+  transition:
+    opacity 300ms ease-out,
+    transform 300ms ease-out;
+}
+.draw-nodes[data-reveal='hidden'] .draw-node {
+  opacity: 0;
+  transform: scale(0.6);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .hero-slide,
+  .hero-slide[data-active='true'] {
+    transition: none;
+  }
+  .reveal,
+  .reveal[data-reveal='hidden'] {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  .draw-line,
+  [data-reveal='hidden'] .draw-line,
+  .draw-line-y,
+  [data-reveal='hidden'] .draw-line-y {
+    transform: none;
+    transition: none;
+  }
+  .draw-nodes[data-reveal='hidden'] .draw-node,
+  .draw-node {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}

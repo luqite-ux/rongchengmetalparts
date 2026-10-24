@@ -1,0 +1,40 @@
+{
+  "context": {
+    "projectId": "project-cf03ec0d-4377-48d3-8c06-79754b3f3afa",
+    "runId": "run-5fa2e873-1ef1-43ab-893d-01c84644e2f6",
+    "purpose": "build"
+  },
+  "scope": "current-run-only",
+  "otherRunIds": [],
+  "checkedAt": "2026-10-24T13:23:09.641Z",
+  "complete": false,
+  "issues": [
+    "QUERY_FAILED",
+    "ADOPTION_UNRECORDED",
+    "DELIVERY_UNRECORDED"
+  ],
+  "pending": 0,
+  "failedQueryCount": 1,
+  "queries": [
+    {
+      "receiptPath": "D:\\Cursor\\Grand\\dulizhan\\rongchengmetalparts\\deliverables\\case-query-failed-dcbaa218-7074-4786-9ac4-c1b6a966fd23.json",
+      "requestId": "failed-dcbaa218-7074-4786-9ac4-c1b6a966fd23",
+      "request": {
+        "match": "fuzzy",
+        "sort": "score-desc",
+        "limit": "8",
+        "query": "industrial brass valve stainless steel aluminum fitting metal component manufacturer OEM ODM",
+        "industry": "industrial metal components",
+        "region": "global"
+      },
+      "status": 0,
+      "decision": "missing",
+      "decisionSent": false,
+      "caseSlugs": [],
+      "reason": "",
+      "externalReferences": []
+    }
+  ],
+  "deliveries": [],
+  "note": "Current run only; other runs are not certified. Adoption is agent-reported, not Owner acceptance or proven design improvement."
+}

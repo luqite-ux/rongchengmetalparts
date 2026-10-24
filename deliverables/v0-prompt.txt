@@ -1,0 +1,35 @@
+Build a complete responsive English-first B2B manufacturer website for RunCing Tech. / RunCing Electromechanical Technology Co., Ltd. The verified Chinese legal entity is 宁波荣城机电科技有限公司. The new formal domain will be rongchengmetalparts.com.
+
+Preserve the customer’s existing visual recognition: deep industrial green #006A17, white space, dark neutral text, and the supplied RunCing logo with its red/blue accents. This is a redesign, not a 1:1 clone of run-cing.com. The visual character should feel precise, engineered and credible, with clean light product stages and authentic factory photography. Do not use black/gray overlays that muddy pale product images. Do not place real product photos inside extra white picture frames. Keep products fully visible with contain behavior and coherent clean backgrounds.
+
+Use the supplied attachments: both logo variants, all three supplied Banner backgrounds, and one representative image for each of the six customer products. All important headings, copy and CTAs must be live HTML, not baked into images. The three Banner images are mandatory hero slides; each needs its own desktop and 390px composition with a protected text safe area, visible product/factory subject, pause/manual controls, and reduced-motion behavior. Do not use video.
+
+Navigation tree: Home; Products (Ball Valve Series, Valve Assemblies, Connector Series); Applications; Manufacturing; About; Contact. Home must be an explicit navigation item and the logo must link home. Create complete pages for Home, Products list, six product details, Applications, Manufacturing, About, Contact/RFQ, News list empty state, and News article template ready for future backend content.
+
+Real product mapping:
+1. Air Line Ball Valve — Ball Valve Series.
+2. Brass Valve Assembly — Valve Series.
+3. Stainless Steel Valve Assembly — Valve Series.
+4. Aluminum Valve Assembly — Valve Series.
+5. Elbow Assembly — Connector Series.
+6. Straight Connector — Connector Series.
+Product routes and cards must remain distinct, clickable and keyboard accessible. Product cards and detail galleries must show every product image without cropping the part.
+
+Homepage order and information tasks:
+1. hero — identify valves and connector assemblies, authentic manufacturing context, product/RFQ CTAs.
+2. product-families — compare the three real families and enter filtered non-empty catalogs.
+3. featured-products — show the six real products as the visual protagonists, with material/product labels.
+4. applications — describe only customer-supported use areas: commercial vehicles, trailers, CNC equipment, hydraulic/pneumatic systems and related industrial equipment; do not claim customer projects.
+5. material-options — explain brass, stainless steel and aluminum as real supplied product variants without inventing performance numbers.
+6. manufacturing-capability — use supplied factory/workshop/equipment images; state only supplied facts such as hot-forging equipment, four workshops and the provided factory scale.
+7. quality-and-certification — show inspection/report capability and customer-stated ISO 9001 / IATF 16949 information without inventing certificate numbers, logos or scope.
+8. customization — show supported OEM/ODM, material/size/interface discussion and sample path, with buyer inputs needed for an RFQ.
+9. cooperation-process — inquiry, technical review, sample confirmation, production and shipment as a neutral process; do not promise outcomes or response times not supplied.
+10. faq — concise, source-backed procurement questions with accessible accordion interaction.
+11. rfq-contact — a serious B2B form using info@rongchengmetalparts.com and the verified address, with space for the image CAPTCHA component to be integrated later.
+
+Use customer facts only. Do not publish the business-license image or registration identifiers. Do not include warranty, guarantee, quality-guarantee promises, fabricated testimonials, customer logos, awards, prices, inventory, certifications, statistics or project results. News must be an honest empty state until real articles are published.
+
+Motion: three to four restrained scenarios only. Use a short product/factory hero cross-fade; bounded viewport reveal for each major section without any global/fixed timeout consuming offscreen animations; a short process/material line motion for the manufacturing narrative; and 150–220ms hover/focus/press feedback for navigation, cards, accordions and CTAs. On 390px, use stacked reading order, 44px touch targets and no hover dependency. Under prefers-reduced-motion, stop autoplay and decorative travel while keeping all content immediately visible.
+
+Technical handoff expectations: Next.js App Router and TypeScript; semantic landmarks, one H1 per page, visible focus states, WCAG AA contrast, responsive 390px behavior, locale-ready data access, server-compatible page composition, and no mock form submission. Keep content in centralized structured data so Codex can replace it with Supabase-backed products/articles and site settings after download.

@@ -1,0 +1,7 @@
+Peer review: Swagelok product site (United States/global fluid-system manufacturer)
+Checked at: 2026-10-24T13:18:00.000Z
+Home: https://products.swagelok.com/en — opens with an explicit fluid-system product proposition, a product-selection CTA, and proof-led copy before the taxonomy.
+Navigation: global/local product navigation separates product categories and provides a direct product-selection path; on narrow layouts the dense hierarchy must collapse without hiding the Products task.
+Products: https://products.swagelok.com/en — clear top-level taxonomy for fittings, valves, hoses, regulators and other fluid-system components, followed by deeper category links.
+Adopt: product-first hierarchy, explicit selection support, and structured category-to-detail progression.
+Reject: account/pricing complexity, large-enterprise breadth, warranty claims, and any Swagelok facts or assets.
