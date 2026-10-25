@@ -49,3 +49,13 @@ test('alerts do not use thick side-tab borders', () => {
   assert.doesNotMatch(quality, /border-l-4/)
   assert.doesNotMatch(rfq, /border-l-4/)
 })
+
+test('English RFQ captcha uses English accessible text', () => {
+  const captchaField = read('components/inquiry-captcha-field.tsx')
+  const captchaSvg = read('lib/inquiry-captcha.ts')
+
+  assert.match(captchaField, /alt="4-character verification code"/)
+  assert.match(captchaSvg, /aria-label="Verification code image"/)
+  assert.doesNotMatch(captchaField, /[\u3400-\u9fff]/)
+  assert.doesNotMatch(captchaSvg, /[\u3400-\u9fff]/)
+})

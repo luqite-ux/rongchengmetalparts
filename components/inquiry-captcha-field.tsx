@@ -50,7 +50,7 @@ export function InquiryCaptchaField({
       setChallenge(body)
     } catch {
       if (!requests.isCurrent(request)) return
-      setError('验证码加载失败，请点击“换一张”重试')
+      setError('Verification image failed to load. Select Refresh to try again.')
     } finally {
       if (requests.isCurrent(request)) setLoading(false)
     }
@@ -73,7 +73,7 @@ export function InquiryCaptchaField({
             // eslint-disable-next-line @next/next/no-img-element
             <img
               src={`data:image/svg+xml;charset=utf-8,${encodeURIComponent(challenge.svg)}`}
-              alt="4 位验证码图片"
+              alt="4-character verification code"
               width={160}
               height={56}
             />
