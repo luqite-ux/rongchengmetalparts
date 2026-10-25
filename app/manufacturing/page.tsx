@@ -19,9 +19,7 @@ export default async function ManufacturingPage() {
   const [home, site] = await Promise.all([getHomeContent(), getSiteSettings()])
   const { manufacturing, quality, process } = home
   const image = manufacturing.images[0]
-  const facts = site.factory.scale
-    ? [...manufacturing.facts, { label: 'Factory scale', description: site.factory.scale }]
-    : manufacturing.facts
+  const facts = manufacturing.facts
 
   return (
     <>
@@ -37,7 +35,7 @@ export default async function ManufacturingPage() {
             <SectionHeading
               id="capability-title"
               eyebrow="Capability"
-              title="What RunCing states about its factory"
+              title="Manufacturing capacity at a glance"
             />
             <dl className="mt-8">
               {facts.map((fact) => (
@@ -49,9 +47,7 @@ export default async function ManufacturingPage() {
                 </div>
               ))}
             </dl>
-            {!site.factory.scale ? (
-              <p className="border-t pt-4 text-sm text-muted-foreground">{manufacturing.scaleNote}</p>
-            ) : null}
+            <p className="border-t pt-4 text-sm text-muted-foreground">{manufacturing.scaleNote}</p>
           </Reveal>
           <Reveal delay={100}>
             <figure>

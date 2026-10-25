@@ -398,13 +398,13 @@ export function RfqForm({
 
       <div aria-live="polite" className={cn(status === 'idle' || status === 'submitting' ? 'hidden' : 'block')}>
         {status === 'success' ? (
-          <div className="border-l-4 border-emerald-700 bg-emerald-50 p-4 text-sm text-emerald-950" role="status">
+          <div className="border border-emerald-700 bg-emerald-50 p-4 text-sm text-emerald-950" role="status">
             <p className="font-semibold">Your inquiry has been received.</p>
             <p className="mt-1">Our team will review the details and reply by email.</p>
           </div>
         ) : null}
         {status === 'error' ? (
-          <div className="border-l-4 border-destructive bg-destructive/10 p-4 text-sm leading-relaxed">
+          <div className="border border-destructive bg-destructive/10 p-4 text-sm leading-relaxed">
             <p className="font-semibold">The inquiry could not be sent.</p>
             <p className="mt-1">
               Please try again, or email{' '}

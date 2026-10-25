@@ -121,7 +121,7 @@ export function HeroCarousel({
                 />
               </div>
 
-              <Container className="relative flex flex-1 lg:h-[640px] lg:items-center xl:h-[680px]">
+              <Container className="relative lg:h-[640px] lg:flex lg:items-center xl:h-[680px]">
                 <div
                   className={cn(
                     'w-full border-t-4 border-primary bg-background py-8 lg:max-w-[34rem] lg:border-t-0 lg:bg-transparent lg:py-0',

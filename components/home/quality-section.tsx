@@ -21,7 +21,7 @@ export function QualitySection({
       <div className="grid gap-12 lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] lg:gap-16">
         <Reveal>
           <SectionHeading id="quality-title" {...copy} />
-          <p className="mt-6 border-l-4 border-primary bg-stage p-4 text-sm leading-relaxed">
+          <p className="mt-6 border border-border bg-stage p-4 text-sm leading-relaxed">
             {disclaimer}
           </p>
         </Reveal>

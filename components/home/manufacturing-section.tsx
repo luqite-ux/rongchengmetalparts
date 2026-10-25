@@ -13,16 +13,12 @@ type Manufacturing = {
 export function ManufacturingSection({
   copy,
   manufacturing,
-  factoryScale,
 }: {
   copy: { eyebrow: string; title: string; description: string }
   manufacturing: Manufacturing
-  factoryScale: string | null
 }) {
   const image = manufacturing.images[0]
-  const facts = factoryScale
-    ? [...manufacturing.facts, { label: 'Factory scale', description: factoryScale }]
-    : manufacturing.facts
+  const facts = manufacturing.facts
 
   return (
     <Section id="manufacturing-capability" labelledBy="manufacturing-title" tone="green">

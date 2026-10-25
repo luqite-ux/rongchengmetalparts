@@ -18,7 +18,7 @@ export const heroSlides: HeroSlide[] = [
     },
     eyebrow: 'Ball valves, valve assemblies and connectors',
     headline: 'Valves and connector assemblies for industrial equipment',
-    body: 'RunCing Tech supplies ball valves, valve assemblies and connector assemblies in brass, stainless steel and aluminum, with OEM/ODM discussion supported.',
+    body: 'RunCing Tech supplies ball valves, valve assemblies and connector assemblies in brass, stainless steel and aluminum, with OEM/ODM support.',
     primaryCta: { label: 'Browse products', href: '/products' },
     secondaryCta: { label: 'Request a quote', href: '/contact#rfq' },
     tone: 'on-dark',
@@ -35,7 +35,7 @@ export const heroSlides: HeroSlide[] = [
     },
     eyebrow: 'Three product families',
     headline: 'Compare the Ball Valve, Valve Assembly and Connector ranges',
-    body: 'Browse the real catalog by family, then send a drawing or sample for technical review before any quotation.',
+    body: 'Compare the catalog by product family, then send a drawing or sample for technical review and quotation.',
     primaryCta: { label: 'Compare product families', href: '/products' },
     secondaryCta: { label: 'Send an RFQ', href: '/contact#rfq' },
     tone: 'on-dark',
@@ -64,13 +64,13 @@ export const heroSlides: HeroSlide[] = [
 export const homeSections = {
   families: {
     eyebrow: 'Product families',
-    title: 'Three real families, each with a filtered catalog',
+    title: 'Three product families for faster selection',
     description:
       'Start from the family that matches your line. Each link opens the catalog filtered to that family.',
   },
   featured: {
     eyebrow: 'Featured products',
-    title: 'Six products from the current range',
+    title: 'Six products across the current catalog',
     description:
       'Every product has its own page with product images, material information and an RFQ path.',
   },
@@ -84,7 +84,7 @@ export const homeSections = {
     eyebrow: 'Material options',
     title: 'Brass, stainless steel and aluminum',
     description:
-      'Compare the three materials available across the current range and discuss performance requirements during selection.',
+      'Compare the three available materials and share your performance requirements during selection.',
   },
   manufacturing: {
     eyebrow: 'Manufacturing capability',
@@ -108,7 +108,7 @@ export const homeSections = {
     eyebrow: 'Cooperation process',
     title: 'From inquiry to shipment',
     description:
-      'A neutral view of the steps. Timing depends on the product, the quantity and the confirmed requirements.',
+      'Follow the path from technical review to production and shipment. Timing depends on the product, quantity and confirmed requirements.',
   },
   faq: {
     eyebrow: 'FAQ',
@@ -193,7 +193,11 @@ export const manufacturingContent = {
     },
     {
       label: 'Four workshops',
-      description: 'Production is organised across four workshops.',
+      description: 'A 10,000 m² facility is organized into four specialized workshops for brass, iron, aluminum and stamping work.',
+    },
+    {
+      label: 'Production capacity',
+      description: 'Monthly capacity of approximately 500,000 pieces supports current manufacturing operations.',
     },
     {
       label: 'Inspection and reports',
@@ -227,14 +231,14 @@ export const manufacturingContent = {
     },
   ] satisfies ImageAsset[],
   scaleNote:
-    'Contact RunCing to discuss the production capacity required for your order.',
+    'Share the product, quantity and delivery destination so production planning can be reviewed for your order.',
 }
 
 export const qualityContent = {
   inspection: [
     {
       title: 'Inspection capability',
-      description: 'RunCing states that it performs inspection on its products.',
+      description: 'Product inspection is integrated into the manufacturing workflow.',
     },
     {
       title: 'Inspection reports',
@@ -346,17 +350,19 @@ export const faqItems: FaqItem[] = [
 
 export const aboutContent = {
   intro: [
-    'RunCing Tech is the trading name of RunCing Electromechanical Technology Co., Ltd.',
-    'The company supplies ball valves, valve assemblies and connector assemblies in brass, stainless steel and aluminum, and supports OEM/ODM requests.',
+    'RunCing Tech is the brand of RunCing Electromechanical Technology Co., Ltd., founded in 2014 with roots in custom metalworking dating to 1997.',
+    'From its 10,000 m² facility in Ningbo, the company supplies ball valves, valve assemblies and connector assemblies in brass, stainless steel and aluminum, with OEM/ODM support.',
   ],
   facts: [
     { label: 'English name', value: 'RunCing Electromechanical Technology Co., Ltd.' },
     { label: 'Products', value: 'Ball valves, valve assemblies, connector assemblies' },
     { label: 'Materials', value: 'Brass, stainless steel, aluminum' },
     { label: 'Manufacturing', value: 'Hot-forging equipment, four workshops' },
+    { label: 'Facility', value: '10,000 m² across four specialized workshops' },
+    { label: 'Production capacity', value: 'Approximately 500,000 pieces per month' },
     { label: 'Quality systems', value: 'ISO 9001, IATF 16949' },
   ],
-  note: 'Company documentation can be discussed during supplier qualification.',
+  note: 'Relevant company and quality documentation is available for applicable supplier-qualification reviews.',
 }
 
 export const pageMeta = {

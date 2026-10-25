@@ -16,8 +16,7 @@ export const site = {
   factory: {
     workshops: 4,
     hotForging: true,
-    // Factory scale figure is pending from the customer. It is only rendered when set.
-    scale: null as string | null,
+    scale: '10,000 m² across four specialized workshops',
   },
 }
 
@@ -63,10 +62,10 @@ export const footerLinks = {
 export const certificationStatements: CertificationStatement[] = [
   {
     label: 'ISO 9001',
-    note: 'Quality management system used in production management.',
+    note: 'Quality management system applied to production management.',
   },
   {
     label: 'IATF 16949',
-    note: 'Automotive quality management system used in production management.',
+    note: 'Automotive quality management system applied to production management.',
   },
 ]

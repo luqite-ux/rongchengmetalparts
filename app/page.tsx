@@ -57,7 +57,6 @@ export default async function HomePage() {
       <ManufacturingSection
         copy={home.sections.manufacturing}
         manufacturing={home.manufacturing}
-        factoryScale={site.factory.scale}
       />
       <QualitySection
         copy={home.sections.quality}

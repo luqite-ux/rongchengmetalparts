@@ -3,6 +3,7 @@ import { ArrowRight } from 'lucide-react'
 import type { ApplicationArea } from '@/lib/types'
 import { Section, SectionHeading } from '@/components/site/primitives'
 import { Reveal } from '@/components/site/reveal'
+import { ApplicationIcon } from '@/components/site/application-icon'
 
 export function ApplicationsSection({
   copy,
@@ -20,6 +21,7 @@ export function ApplicationsSection({
         <ul className="grid border-l border-t bg-card sm:grid-cols-2 lg:grid-cols-3">
           {areas.map((area, areaIndex) => (
             <li key={area.slug} className="border-b border-r p-6">
+              <ApplicationIcon slug={area.slug} />
               <p className="font-mono text-xs text-primary">
                 {String(areaIndex + 1).padStart(2, '0')}
               </p>

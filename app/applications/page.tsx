@@ -3,6 +3,7 @@ import { getApplicationAreas, getPageMeta } from '@/lib/data'
 import { PageHero } from '@/components/site/page-hero'
 import { CtaLink, Section, SectionHeading } from '@/components/site/primitives'
 import { Reveal } from '@/components/site/reveal'
+import { ApplicationIcon } from '@/components/site/application-icon'
 
 export async function generateMetadata(): Promise<Metadata> {
   const meta = await getPageMeta()
@@ -36,13 +37,13 @@ export default async function ApplicationsPage() {
                   id={area.slug}
                   className="flex h-full flex-col border-2 border-border bg-card p-6 transition-colors duration-200 hover:border-primary motion-reduce:transition-none sm:p-8"
                 >
-                  <span
-                    aria-hidden="true"
-                    className="font-mono text-sm font-semibold text-primary"
-                  >
-                    {String(areaIndex + 1).padStart(2, '0')}
-                  </span>
-                  <h3 className="mt-2 text-xl font-semibold tracking-tight">{area.name}</h3>
+                  <div className="flex items-center justify-between gap-4">
+                    <ApplicationIcon slug={area.slug} />
+                    <span aria-hidden="true" className="font-mono text-sm font-semibold text-primary">
+                      {String(areaIndex + 1).padStart(2, '0')}
+                    </span>
+                  </div>
+                  <h3 className="mt-4 text-xl font-semibold tracking-tight">{area.name}</h3>
                   <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
                     {area.summary}
                   </p>
