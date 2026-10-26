@@ -59,3 +59,65 @@ test('English RFQ captcha uses English accessible text', () => {
   assert.doesNotMatch(captchaField, /[\u3400-\u9fff]/)
   assert.doesNotMatch(captchaSvg, /[\u3400-\u9fff]/)
 })
+
+test('product family cards use one balanced media stage and compact facts', () => {
+  const families = read('components/home/families-section.tsx')
+
+  assert.match(families, /aspect-\[16\/10\]/)
+  assert.match(families, /family\.descriptor/)
+  assert.match(families, /products ·/)
+  assert.doesNotMatch(families, /gridTemplateColumns/)
+  assert.doesNotMatch(families, /aspect-\[4\/5\]/)
+  assert.doesNotMatch(families, /mt-auto inline-flex/)
+})
+
+test('material cards use a flat comparison layout without nested product cards', () => {
+  const materials = read('components/home/materials-section.tsx')
+
+  assert.match(materials, /aspect-\[16\/10\]/)
+  assert.match(materials, /Products in this material/)
+  assert.match(materials, /ArrowUpRight/)
+  assert.doesNotMatch(materials, /border-t-4/)
+  assert.doesNotMatch(materials, /grid-cols-2 gap-3/)
+  assert.doesNotMatch(materials, /group block border bg-card/)
+})
+
+test('desktop product menu closes after pointer exit, outside click, and Escape', () => {
+  const header = read('components/site/site-header.tsx')
+
+  assert.match(header, /desktopMenuOpen/)
+  assert.match(header, /onPointerLeave/)
+  assert.match(header, /pointerdown/)
+  assert.match(header, /event\.key === 'Escape'/)
+})
+
+test('company photography uses the reusable masonry lightbox experience', () => {
+  const gallery = read('components/site/company-gallery.tsx')
+  const about = read('app/about/page.tsx')
+  const manufacturing = read('app/manufacturing/page.tsx')
+
+  assert.match(gallery, /columns-1/)
+  assert.match(gallery, /break-inside-avoid/)
+  assert.match(gallery, /role="dialog"/)
+  assert.match(gallery, /scrollY/)
+  assert.match(gallery, /ArrowLeft/)
+  assert.match(gallery, /ArrowRight/)
+  assert.match(about, /CompanyGallery/)
+  assert.match(manufacturing, /CompanyGallery/)
+})
+
+test('applications page leads with real product imagery and a graphic application grid', () => {
+  const applications = read('app/applications/page.tsx')
+
+  assert.match(applications, /hero-product-range\.jpg/)
+  assert.match(applications, /ApplicationIcon/)
+  assert.match(applications, /aria-hidden="true" className="size-12/)
+  assert.doesNotMatch(applications, /padStart\(2, '0'\)/)
+})
+
+test('about introduction includes real company photography beside company facts', () => {
+  const about = read('app/about/page.tsx')
+
+  assert.match(about, /site\.companyMedia\[0\]/)
+  assert.match(about, /Factory exterior at RunCing/)
+})

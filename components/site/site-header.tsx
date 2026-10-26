@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { ChevronDown, Menu, X } from 'lucide-react'
@@ -21,22 +21,34 @@ const linkBase =
 export function SiteHeader({ items }: { items: NavItem[] }) {
   const pathname = usePathname()
   const [open, setOpen] = useState(false)
+  const [desktopMenuOpen, setDesktopMenuOpen] = useState<string | null>(null)
+  const headerRef = useRef<HTMLElement>(null)
 
   useEffect(() => {
     setOpen(false)
+    setDesktopMenuOpen(null)
   }, [pathname])
 
   useEffect(() => {
-    if (!open) return
     const onKeyDown = (event: KeyboardEvent) => {
-      if (event.key === 'Escape') setOpen(false)
+      if (event.key === 'Escape') {
+        setOpen(false)
+        setDesktopMenuOpen(null)
+      }
+    }
+    const onPointerDown = (event: PointerEvent) => {
+      if (!headerRef.current?.contains(event.target as Node)) setDesktopMenuOpen(null)
     }
     document.addEventListener('keydown', onKeyDown)
-    return () => document.removeEventListener('keydown', onKeyDown)
-  }, [open])
+    document.addEventListener('pointerdown', onPointerDown)
+    return () => {
+      document.removeEventListener('keydown', onKeyDown)
+      document.removeEventListener('pointerdown', onPointerDown)
+    }
+  }, [])
 
   return (
-    <header className="sticky top-0 z-50 border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/90">
+    <header ref={headerRef} className="sticky top-0 z-50 border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/90">
       <Container className="flex h-[4.5rem] items-center justify-between gap-6">
         <Logo />
 
@@ -51,17 +63,32 @@ export function SiteHeader({ items }: { items: NavItem[] }) {
                   : 'text-foreground hover:bg-accent hover:text-accent-foreground',
               )
               return (
-                <li key={item.href} className="group relative">
+                <li
+                  key={item.href}
+                  className="group relative"
+                  onPointerEnter={() => item.children && setDesktopMenuOpen(item.href)}
+                  onPointerLeave={() => item.children && setDesktopMenuOpen(null)}
+                  onFocus={() => item.children && setDesktopMenuOpen(item.href)}
+                  onBlur={(event) => {
+                    if (item.children && !event.currentTarget.contains(event.relatedTarget)) {
+                      setDesktopMenuOpen(null)
+                    }
+                  }}
+                >
                   <Link
                     href={item.href}
                     aria-current={active ? 'page' : undefined}
+                    aria-expanded={item.children ? desktopMenuOpen === item.href : undefined}
                     className={cn(linkClass, 'relative')}
                   >
                     {item.label}
                     {item.children ? (
                       <ChevronDown
                         aria-hidden="true"
-                        className="ml-1 size-4 transition-transform duration-200 group-hover:rotate-180 group-focus-within:rotate-180 motion-reduce:transition-none"
+                        className={cn(
+                          'ml-1 size-4 transition-transform duration-200 motion-reduce:transition-none',
+                          desktopMenuOpen === item.href && 'rotate-180',
+                        )}
                       />
                     ) : null}
                     <span
@@ -73,7 +100,10 @@ export function SiteHeader({ items }: { items: NavItem[] }) {
                     />
                   </Link>
                   {item.children ? (
-                    <div className="invisible absolute left-0 top-full z-50 w-72 pt-1 opacity-0 transition-[opacity,visibility] duration-200 group-focus-within:visible group-focus-within:opacity-100 group-hover:visible group-hover:opacity-100 motion-reduce:transition-none">
+                    <div
+                      hidden={desktopMenuOpen !== item.href}
+                      className="absolute left-0 top-full z-50 w-72 pt-1"
+                    >
                       <ul className="rounded-md border bg-background p-2 shadow-lg">
                         {item.children.map((child) => (
                           <li key={child.href}>

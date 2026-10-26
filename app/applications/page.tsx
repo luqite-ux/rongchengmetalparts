@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Image from 'next/image'
 import { getApplicationAreas, getPageMeta } from '@/lib/data'
 import { PageHero } from '@/components/site/page-hero'
 import { CtaLink, Section, SectionHeading } from '@/components/site/primitives'
@@ -25,23 +26,49 @@ export default async function ApplicationsPage() {
         description="Review common use areas for RunCing valves and connectors, then share your system details for product selection."
         crumbs={[{ label: 'Applications' }]}
       />
+      <Section labelledBy="application-context-title">
+        <div className="grid items-center gap-10 lg:grid-cols-[minmax(0,1.15fr)_minmax(20rem,.85fr)] lg:gap-14">
+          <Reveal>
+            <div className="relative aspect-[16/10] overflow-hidden bg-stage">
+              <Image
+                src="/images/hero-product-range.jpg"
+                alt="RunCing valve and connector product range"
+                fill
+                priority
+                sizes="(min-width: 1024px) 58vw, 100vw"
+                className="object-cover"
+              />
+            </div>
+          </Reveal>
+          <Reveal delay={100}>
+            <SectionHeading
+              id="application-context-title"
+              eyebrow="Selection context"
+              title="Start with the system, not a generic part number"
+              description="Media, operating conditions and the required interface help narrow the appropriate product family and material. The areas below show which details to include in an RFQ."
+            />
+            <div className="mt-6 flex flex-wrap gap-2 text-sm font-semibold">
+              <span className="bg-stage px-3 py-2">System</span>
+              <span className="bg-stage px-3 py-2">Media</span>
+              <span className="bg-stage px-3 py-2">Interface</span>
+            </div>
+          </Reveal>
+        </div>
+      </Section>
       <Section labelledBy="areas-title">
         <h2 id="areas-title" className="sr-only">
           Application areas
         </h2>
-        <ul className="grid gap-6 md:grid-cols-2">
-          {areas.map((area, areaIndex) => (
+        <ul className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+          {areas.map((area) => (
             <li key={area.slug}>
               <Reveal className="h-full">
                 <article
                   id={area.slug}
-                  className="flex h-full flex-col border-2 border-border bg-card p-6 transition-colors duration-200 hover:border-primary motion-reduce:transition-none sm:p-8"
+                  className="group flex h-full flex-col border bg-card p-6 transition-colors duration-200 hover:border-primary hover:bg-stage motion-reduce:transition-none sm:p-8"
                 >
-                  <div className="flex items-center justify-between gap-4">
+                  <div aria-hidden="true" className="size-12 text-primary [&>span]:size-12 [&_svg]:size-6">
                     <ApplicationIcon slug={area.slug} />
-                    <span aria-hidden="true" className="font-mono text-sm font-semibold text-primary">
-                      {String(areaIndex + 1).padStart(2, '0')}
-                    </span>
                   </div>
                   <h3 className="mt-4 text-xl font-semibold tracking-tight">{area.name}</h3>
                   <p className="mt-3 text-sm leading-relaxed text-muted-foreground">

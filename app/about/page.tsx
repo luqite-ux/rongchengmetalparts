@@ -5,6 +5,7 @@ import { PageHero } from '@/components/site/page-hero'
 import { CtaLink, Section, SectionHeading } from '@/components/site/primitives'
 import { Reveal } from '@/components/site/reveal'
 import Link from 'next/link'
+import { CompanyGallery } from '@/components/site/company-gallery'
 
 export async function generateMetadata(): Promise<Metadata> {
   const meta = await getPageMeta()
@@ -27,7 +28,7 @@ export default async function AboutPage() {
         crumbs={[{ label: 'About' }]}
       />
       <Section labelledBy="company-title">
-        <div className="grid gap-12 lg:grid-cols-2 lg:gap-16">
+        <div className="grid items-start gap-10 lg:grid-cols-[minmax(0,1.05fr)_minmax(22rem,.95fr)] lg:gap-14">
           <Reveal>
             <SectionHeading id="company-title" eyebrow="Company" title="Who we are" />
             <div className="mt-6 space-y-4 text-base leading-relaxed text-muted-foreground">
@@ -35,13 +36,22 @@ export default async function AboutPage() {
                 <p key={paragraph}>{paragraph}</p>
               ))}
             </div>
-            <Image
-              src={site.logoUrl}
-              alt="RunCing logo"
-              width={160}
-              height={160}
-              className="mt-8 h-auto w-32"
-            />
+            {site.companyMedia[0] ? (
+              <figure className="mt-8">
+                <Image
+                  src={site.companyMedia[0]}
+                  alt="Factory exterior at RunCing"
+                  width={1600}
+                  height={1200}
+                  sizes="(min-width: 1024px) 52vw, 100vw"
+                  className="h-auto w-full bg-stage"
+                />
+                <figcaption className="mt-3 flex items-center justify-between gap-4 text-xs text-muted-foreground">
+                  <span>RunCing facility in Ningbo</span>
+                  <Image src={site.logoUrl} alt="RunCing logo" width={120} height={48} className="h-8 w-auto object-contain" />
+                </figcaption>
+              </figure>
+            ) : null}
           </Reveal>
           <Reveal delay={100}>
             <h3 className="font-mono text-xs font-medium uppercase tracking-[0.14em] text-muted-foreground">
@@ -67,17 +77,7 @@ export default async function AboutPage() {
           <Reveal>
             <SectionHeading id="company-gallery-title" eyebrow="Factory overview" title="Inside RunCing" description="A closer look at the facility, production equipment and working environment." />
           </Reveal>
-          <ul className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {site.companyMedia.map((src, index) => (
-              <li key={src} className="overflow-hidden border bg-card">
-                <Reveal className="h-full">
-                  <div className="relative aspect-[4/3] bg-stage">
-                    <Image src={src} alt={`RunCing facility view ${index + 1}`} fill sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" className="object-cover" />
-                  </div>
-                </Reveal>
-              </li>
-            ))}
-          </ul>
+          <CompanyGallery images={site.companyMedia} label="Inside RunCing" />
         </Section>
       ) : null}
       <Section labelledBy="families-title" tone="stage">

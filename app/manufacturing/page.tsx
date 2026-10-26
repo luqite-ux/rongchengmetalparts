@@ -5,6 +5,7 @@ import { PageHero } from '@/components/site/page-hero'
 import { CtaLink, Section, SectionHeading } from '@/components/site/primitives'
 import { Reveal } from '@/components/site/reveal'
 import { StepLine } from '@/components/site/step-line'
+import { CompanyGallery } from '@/components/site/company-gallery'
 
 export async function generateMetadata(): Promise<Metadata> {
   const meta = await getPageMeta()
@@ -72,17 +73,7 @@ export default async function ManufacturingPage() {
           <Reveal>
             <SectionHeading id="workshop-gallery-title" eyebrow="Production environment" title="Facility and equipment gallery" description="See the spaces and equipment that support machining, assembly and material handling." />
           </Reveal>
-          <ul className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {site.companyMedia.map((src, index) => (
-              <li key={src} className="overflow-hidden border bg-card">
-                <Reveal className="h-full">
-                  <div className="relative aspect-[4/3] bg-stage">
-                    <Image src={src} alt={`RunCing workshop and equipment view ${index + 1}`} fill sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" className="object-cover" />
-                  </div>
-                </Reveal>
-              </li>
-            ))}
-          </ul>
+          <CompanyGallery images={site.companyMedia} label="RunCing facility and equipment gallery" />
         </Section>
       ) : null}
       <Section labelledBy="line-title" tone="stage">
