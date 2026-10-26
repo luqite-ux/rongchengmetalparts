@@ -69,6 +69,7 @@ test('product families are a compact navigation layer rather than a second produ
   assert.match(families, /Waypoints/)
   assert.match(families, /family\.descriptor/)
   assert.match(families, /'product' : 'products'/)
+  assert.match(families, /sort\(\(left, right\) => left\.productCount - right\.productCount\)/)
   assert.match(families, /delay=\{familyIndex \* 80\}/)
   assert.match(families, /group-hover:translate-x-1/)
   assert.match(families, /motion-reduce:transform-none/)

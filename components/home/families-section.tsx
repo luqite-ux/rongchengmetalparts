@@ -21,6 +21,13 @@ export function FamiliesSection({
   families: ProductFamily[]
   products: Product[]
 }) {
+  const orderedFamilies = families
+    .map((family) => {
+      const familyProducts = products.filter((product) => product.familySlug === family.slug)
+      return { family, familyProducts, productCount: familyProducts.length }
+    })
+    .sort((left, right) => left.productCount - right.productCount)
+
   return (
     <Section id="product-families" labelledBy="product-families-title" tone="stage">
       <Reveal>
@@ -30,8 +37,7 @@ export function FamiliesSection({
         aria-label="Browse by family"
         className="mt-8 divide-y border-y border-border lg:grid lg:grid-cols-3 lg:divide-x lg:divide-y-0"
       >
-        {families.map((family, familyIndex) => {
-          const familyProducts = products.filter((product) => product.familySlug === family.slug)
+        {orderedFamilies.map(({ family, familyProducts }, familyIndex) => {
           const materials = Array.from(
             new Set(familyProducts.map((product) => product.materialLabel)),
           )
