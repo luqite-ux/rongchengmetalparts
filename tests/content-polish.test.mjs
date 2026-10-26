@@ -60,15 +60,16 @@ test('English RFQ captcha uses English accessible text', () => {
   assert.doesNotMatch(captchaSvg, /[\u3400-\u9fff]/)
 })
 
-test('product family cards use one balanced media stage and compact facts', () => {
+test('product families are a compact navigation layer rather than a second product-card grid', () => {
   const families = read('components/home/families-section.tsx')
 
-  assert.match(families, /aspect-\[16\/10\]/)
+  assert.match(families, /Browse by family/)
   assert.match(families, /family\.descriptor/)
-  assert.match(families, /products ·/)
+  assert.match(families, /'product' : 'products'/)
+  assert.doesNotMatch(families, /ProductStage/)
+  assert.doesNotMatch(families, /<article/)
+  assert.doesNotMatch(families, /aspect-\[/)
   assert.doesNotMatch(families, /gridTemplateColumns/)
-  assert.doesNotMatch(families, /aspect-\[4\/5\]/)
-  assert.doesNotMatch(families, /mt-auto inline-flex/)
 })
 
 test('material cards use a flat comparison layout without nested product cards', () => {
