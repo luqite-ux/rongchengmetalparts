@@ -56,13 +56,7 @@ export function RfqSection({
                 <p className="text-base leading-relaxed">
                   {site.legalNameEn}
                   <br />
-                  {site.streetAddress ? (
-                    <>
-                      {site.streetAddress}
-                      <br />
-                    </>
-                  ) : null}
-                  {site.location}
+                  {site.streetAddress ?? site.location}
                 </p>
               </div>
             </div>
