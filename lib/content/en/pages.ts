@@ -17,7 +17,7 @@ export const heroSlides: HeroSlide[] = [
       height: 1073,
     },
     eyebrow: 'Ball valves, valve assemblies and connectors',
-    headline: 'Valves and connector assemblies for industrial equipment',
+    headline: 'Valves and connectors for industrial equipment',
     body: 'RunCing Tech supplies ball valves, valve assemblies and connector assemblies in brass, stainless steel and aluminum, with OEM/ODM support.',
     primaryCta: { label: 'Browse products', href: '/products' },
     secondaryCta: { label: 'Request a quote', href: '/contact#rfq' },

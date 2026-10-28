@@ -21,7 +21,7 @@ import { RfqSection } from '@/components/rfq/rfq-section'
 export const revalidate = 60
 
 export const metadata: Metadata = {
-  title: { absolute: 'RunCing Tech | Valves and connector assemblies manufacturer' },
+  title: { absolute: 'RunCing Tech | Valves and connectors manufacturer' },
   description:
     'RunCing Tech supplies ball valves, valve assemblies and connector assemblies in brass, stainless steel and aluminum, with OEM/ODM support.',
   alternates: { canonical: '/' },
@@ -40,7 +40,7 @@ export default async function HomePage() {
     <>
       <HeroCarousel
         slides={slides}
-        srTitle="RunCing Tech: valves and connector assemblies manufacturer"
+        srTitle="RunCing Tech: valves and connectors manufacturer"
       />
       <FamiliesSection copy={home.sections.families} families={families} products={products} />
       <FeaturedProducts

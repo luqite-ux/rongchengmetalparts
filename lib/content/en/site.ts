@@ -8,9 +8,8 @@ export const site = {
   domain: 'rongchengmetalparts.com',
   email: 'info@rongchengmetalparts.com',
   location: 'Ningbo, China',
-  // The verified street address has not been supplied yet. When it is, set it here and it renders in the footer and contact page.
-  streetAddress: null as string | null,
-  tagline: 'Valves and connector assemblies manufacturer',
+  streetAddress: 'No. 1, Lane 10, Xuneng North Road, Dajiahe Industrial Park, Ninghai County, Ningbo, Zhejiang, China',
+  tagline: 'Valves and connectors manufacturer',
   description:
     'RunCing Tech (RunCing Electromechanical Technology Co., Ltd.) supplies ball valves, valve assemblies and connector assemblies in brass, stainless steel and aluminum, with OEM/ODM support.',
   factory: {

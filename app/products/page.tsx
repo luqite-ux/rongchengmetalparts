@@ -46,7 +46,7 @@ export default async function ProductsPage({
     <>
       <PageHero
         eyebrow="Product catalog"
-        title={activeFamily ? activeFamily.name : 'Valves and connector assemblies'}
+        title={activeFamily ? activeFamily.name : 'Valves and connectors'}
         description={
           activeFamily
             ? activeFamily.summary

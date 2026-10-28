@@ -12,7 +12,7 @@ const geistMono = Geist_Mono({ subsets: ['latin'], variable: '--font-geist-mono'
 export const metadata: Metadata = {
   metadataBase: new URL('https://rongchengmetalparts.com'),
   title: {
-    default: 'RunCing Tech | Valves and connector assemblies manufacturer',
+    default: 'RunCing Tech | Valves and connectors manufacturer',
     template: '%s | RunCing Tech',
   },
   description:
