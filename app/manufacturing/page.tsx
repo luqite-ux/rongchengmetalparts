@@ -26,8 +26,8 @@ export default async function ManufacturingPage() {
     <>
       <PageHero
         eyebrow="Manufacturing"
-        title="Hot-forging equipment, four workshops and inspection"
-        description="Explore RunCing's hot-forging equipment, workshop organization and inspection workflow."
+        title="CNC, Hot Forging, Stamping and Welding"
+        description="Review RunCing's four priority capabilities, then send a drawing or sample for a project-specific technical assessment."
         crumbs={[{ label: 'Manufacturing' }]}
       />
       <Section labelledBy="capability-title">
@@ -36,7 +36,7 @@ export default async function ManufacturingPage() {
             <SectionHeading
               id="capability-title"
               eyebrow="Capability"
-              title="Manufacturing capacity at a glance"
+              title="Manufacturing Capability at a Glance"
             />
             <dl className="mt-8">
               {facts.map((fact) => (
@@ -62,7 +62,7 @@ export default async function ManufacturingPage() {
                 />
               </div>
               <figcaption className="mt-3 text-xs text-muted-foreground">
-                Manufacturing hall with CNC machines and conveyors.
+                Customer-supplied overview of representative precision components.
               </figcaption>
             </figure>
           </Reveal>
@@ -71,7 +71,7 @@ export default async function ManufacturingPage() {
       {site.companyMedia.length ? (
         <Section labelledBy="workshop-gallery-title" tone="stage">
           <Reveal>
-            <SectionHeading id="workshop-gallery-title" eyebrow="Production environment" title="Facility and equipment gallery" description="See the spaces and equipment that support machining, assembly and material handling." />
+            <SectionHeading id="workshop-gallery-title" eyebrow="Production Environment" title="Facility and Equipment Gallery" description="See the spaces and equipment that support machining, assembly and material handling." />
           </Reveal>
           <CompanyGallery images={site.companyMedia} label="RunCing facility and equipment gallery" />
         </Section>
@@ -81,8 +81,8 @@ export default async function ManufacturingPage() {
           <SectionHeading
             id="line-title"
             eyebrow="Capability line"
-            title="From material to inspection"
-            description="Follow the core production stages from material preparation through inspection."
+            title="Four Priority Capabilities"
+            description="Each project starts with the buyer's drawing, sample, material and acceptance requirements."
           />
         </Reveal>
         <div className="mt-12">
@@ -95,7 +95,7 @@ export default async function ManufacturingPage() {
             <SectionHeading
               id="inspection-title"
               eyebrow="Inspection and reports"
-              title="Quality information available"
+              title="Quality Information Available"
               description={quality.disclaimer}
             />
           </Reveal>
@@ -124,7 +124,7 @@ export default async function ManufacturingPage() {
           <SectionHeading
             id="process-title"
             eyebrow="Cooperation process"
-            title="From inquiry to shipment"
+            title="From Inquiry to Shipment"
             description="Timing depends on the product, the quantity and the confirmed requirements."
           />
         </Reveal>
@@ -132,9 +132,9 @@ export default async function ManufacturingPage() {
           <StepLine steps={process} columns={5} />
         </div>
         <div className="mt-12 flex flex-col gap-3 sm:flex-row">
-          <CtaLink href="/contact#rfq">Request a quote</CtaLink>
+          <CtaLink href="/contact#rfq">Request a Quote</CtaLink>
           <CtaLink href="/products" variant="outline" arrow={false}>
-            Browse products
+            Browse Products
           </CtaLink>
         </div>
       </Section>

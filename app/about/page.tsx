@@ -30,7 +30,7 @@ export default async function AboutPage() {
       <Section labelledBy="company-title">
         <div className="grid items-start gap-10 lg:grid-cols-[minmax(0,1.05fr)_minmax(22rem,.95fr)] lg:gap-14">
           <Reveal>
-            <SectionHeading id="company-title" eyebrow="Company" title="Who we are" />
+            <SectionHeading id="company-title" eyebrow="Company" title="Who We Are" />
             <div className="mt-6 space-y-4 text-base leading-relaxed text-muted-foreground">
               {about.intro.map((paragraph) => (
                 <p key={paragraph}>{paragraph}</p>
@@ -75,7 +75,7 @@ export default async function AboutPage() {
       {site.companyMedia.length ? (
         <Section labelledBy="company-gallery-title" tone="stage">
           <Reveal>
-            <SectionHeading id="company-gallery-title" eyebrow="Factory overview" title="Inside RunCing" description="A closer look at the facility, production equipment and working environment." />
+            <SectionHeading id="company-gallery-title" eyebrow="Factory Overview" title="Inside RunCing" description="A closer look at the facility, production equipment and working environment." />
           </Reveal>
           <CompanyGallery images={site.companyMedia} label="Inside RunCing" />
         </Section>
@@ -85,7 +85,7 @@ export default async function AboutPage() {
           <SectionHeading
             id="families-title"
             eyebrow="What we supply"
-            title="Three product families"
+            title="Air Ball Valve Series Categories"
           />
         </Reveal>
         <ul className="mt-10 grid gap-6 md:grid-cols-3">

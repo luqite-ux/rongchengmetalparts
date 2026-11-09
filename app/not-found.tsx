@@ -9,7 +9,7 @@ export default function NotFound() {
           id="not-found-title"
           className="mt-3 text-balance text-4xl font-semibold tracking-tight"
         >
-          Page not found
+          Page Not Found
         </h1>
         <p className="mt-4 text-base leading-relaxed text-muted-foreground">
           The page you requested does not exist or has moved. Return home or browse the product

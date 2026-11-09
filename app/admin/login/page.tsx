@@ -5,7 +5,7 @@ export default async function LoginPage({ searchParams }: { searchParams: Promis
   return <main className="grid min-h-screen place-items-center bg-slate-100 p-6">
     <section className="w-full max-w-md rounded-2xl bg-white p-8 shadow-xl" aria-labelledby="login-title">
       <Image src="/images/logo-full.png" alt="RunCing Tech" width={210} height={60} className="h-auto w-52" priority />
-      <h1 id="login-title" className="mt-8 text-2xl font-semibold text-slate-950">Customer administration</h1>
+      <h1 id="login-title" className="mt-8 text-2xl font-semibold text-slate-950">Customer Administration</h1>
       <p className="mt-2 text-sm text-slate-600">Sign in to manage products, articles, inquiries and site settings.</p>
       {error ? <p role="alert" className="mt-5 rounded-lg bg-red-50 p-3 text-sm text-red-800">The email or password is incorrect. Please try again.</p> : null}
       <form action="/api/auth/login" method="post" className="mt-6 space-y-5">

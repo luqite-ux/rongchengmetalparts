@@ -90,7 +90,7 @@ export default async function ProductPage({
           <ProductGallery images={product.images} name={product.name} />
           <div>
             <h2 id="product-overview-title" className="text-2xl font-semibold tracking-tight">
-              Product overview
+              Product Overview
             </h2>
             <p className="mt-2 text-sm font-medium text-primary">{product.materialLabel}</p>
             <div className="mt-4 space-y-4 text-base leading-relaxed text-muted-foreground">
@@ -133,8 +133,8 @@ export default async function ProductPage({
         <Reveal>
           <SectionHeading
             id="related-title"
-            eyebrow="Related products"
-            title="Other products in the range"
+            eyebrow="Related Products"
+            title="Other Products in the Range"
           />
         </Reveal>
         <ul className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">

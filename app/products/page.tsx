@@ -4,9 +4,10 @@ import { getPageMeta, getProductFamilies, getProducts } from '@/lib/data'
 import type { FamilySlug } from '@/lib/types'
 import { cn } from '@/lib/utils'
 import { PageHero } from '@/components/site/page-hero'
-import { Section } from '@/components/site/primitives'
+import { CtaLink, Section } from '@/components/site/primitives'
 import { Reveal } from '@/components/site/reveal'
 import { ProductCard } from '@/components/products/product-card'
+import { catalogIntroduction, catalogParentName } from '@/lib/customer-revision'
 
 export async function generateMetadata(): Promise<Metadata> {
   const meta = await getPageMeta()
@@ -26,19 +27,18 @@ export default async function ProductsPage({
   const familyParam = Array.isArray(family) ? family[0] : family
   const families = await getProductFamilies()
   const activeFamily = families.find((item) => item.slug === familyParam) ?? null
-  const [products, allProducts] = await Promise.all([
-    getProducts(undefined, activeFamily ? { familySlug: activeFamily.slug as FamilySlug } : undefined),
-    getProducts(),
-  ])
+  const products = await getProducts(
+    undefined,
+    activeFamily ? { familySlug: activeFamily.slug as FamilySlug } : undefined,
+  )
   const familyName = (slug: string) => families.find((item) => item.slug === slug)?.name ?? ''
 
   const filters = [
-    { label: 'All products', href: '/products', active: !activeFamily, count: allProducts.length },
+    { label: 'Representative Products', href: '/products', active: !activeFamily },
     ...families.map((item) => ({
       label: item.name,
       href: `/products?family=${item.slug}`,
       active: activeFamily?.slug === item.slug,
-      count: allProducts.filter((product) => product.familySlug === item.slug).length,
     })),
   ]
 
@@ -46,11 +46,11 @@ export default async function ProductsPage({
     <>
       <PageHero
         eyebrow="Product catalog"
-        title={activeFamily ? activeFamily.name : 'Valves and connectors'}
+        title={activeFamily ? activeFamily.name : catalogParentName}
         description={
           activeFamily
             ? activeFamily.summary
-            : 'Six products across three families, in brass, stainless steel and aluminum. Prices and stock levels are not listed; request a quotation for your requirement.'
+            : catalogIntroduction
         }
         crumbs={
           activeFamily
@@ -77,26 +77,37 @@ export default async function ProductsPage({
                   )}
                 >
                   {filter.label}
-                  <span className="font-mono text-xs opacity-80">{filter.count}</span>
                 </Link>
               </li>
             ))}
           </ul>
         </nav>
-        <ul className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {products.map((product, productIndex) => (
-            <li key={product.slug}>
-              <Reveal className="h-full">
-                <ProductCard
-                  product={product}
-                  familyName={familyName(product.familySlug)}
-                  index={productIndex}
-                  priority={productIndex < 3}
-                />
-              </Reveal>
-            </li>
-          ))}
-        </ul>
+        {products.length ? (
+          <ul className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {products.map((product, productIndex) => (
+              <li key={product.slug}>
+                <Reveal className="h-full">
+                  <ProductCard
+                    product={product}
+                    familyName={familyName(product.familySlug)}
+                    index={productIndex}
+                    priority={productIndex < 3}
+                  />
+                </Reveal>
+              </li>
+            ))}
+          </ul>
+        ) : (
+          <Reveal className="mt-10 border bg-stage p-6 sm:p-10">
+            <h2 className="text-2xl font-semibold tracking-tight">Drawing-Based Product Review</h2>
+            <p className="mt-3 max-w-3xl leading-relaxed text-muted-foreground">
+              Additional product types are not listed until their scope is confirmed. Send the drawing, sample, material, dimensions, interfaces and expected quantity for technical review.
+            </p>
+            <div className="mt-6">
+              <CtaLink href="/contact#rfq">Send Your Requirement</CtaLink>
+            </div>
+          </Reveal>
+        )}
       </Section>
     </>
   )

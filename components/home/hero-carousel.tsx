@@ -115,7 +115,9 @@ export function HeroCarousel({
                   className={cn(
                     'absolute inset-0 hidden lg:block',
                     onDark
-                      ? 'bg-[linear-gradient(90deg,rgba(6,30,96,0.9)_0%,rgba(6,30,96,0.72)_30%,rgba(6,30,96,0)_58%)]'
+                      ? textRight
+                        ? 'bg-[linear-gradient(270deg,rgba(6,30,96,0.9)_0%,rgba(6,30,96,0.72)_30%,rgba(6,30,96,0)_58%)]'
+                        : 'bg-[linear-gradient(90deg,rgba(6,30,96,0.9)_0%,rgba(6,30,96,0.72)_30%,rgba(6,30,96,0)_58%)]'
                       : 'bg-[linear-gradient(270deg,rgba(255,255,255,0.94)_0%,rgba(255,255,255,0.82)_38%,rgba(255,255,255,0)_66%)]',
                   )}
                 />

@@ -7,9 +7,9 @@ import { Reveal } from '@/components/site/reveal'
 type SectionCopy = { eyebrow: string; title: string; description: string }
 
 const familyIcons: Record<string, LucideIcon> = {
-  'ball-valve-series': CircleGauge,
-  'valve-assemblies': Settings2,
-  'connector-series': Waypoints,
+  'valve-assemblies': CircleGauge,
+  'fittings-adapters': Waypoints,
+  others: Settings2,
 }
 
 export function FamiliesSection({
@@ -24,9 +24,8 @@ export function FamiliesSection({
   const orderedFamilies = families
     .map((family) => {
       const familyProducts = products.filter((product) => product.familySlug === family.slug)
-      return { family, familyProducts, productCount: familyProducts.length }
+      return { family, familyProducts }
     })
-    .sort((left, right) => left.productCount - right.productCount)
 
   return (
     <Section id="product-families" labelledBy="product-families-title" tone="stage">
@@ -34,7 +33,7 @@ export function FamiliesSection({
         <SectionHeading id="product-families-title" {...copy} />
       </Reveal>
       <ul
-        aria-label="Browse by family"
+        aria-label="Browse Air Ball Valve Series categories"
         className="mt-8 divide-y border-y border-border lg:grid lg:grid-cols-3 lg:divide-x lg:divide-y-0"
       >
         {orderedFamilies.map(({ family, familyProducts }, familyIndex) => {
@@ -64,8 +63,15 @@ export function FamiliesSection({
                   </div>
                   <div className="flex items-end justify-between gap-5">
                     <p className="text-sm leading-relaxed text-muted-foreground">
-                      <span className="font-semibold text-foreground">{familyProducts.length}</span>{' '}
-                      {familyProducts.length === 1 ? 'product' : 'products'} · {materials.join(' / ')}
+                      {familyProducts.length ? (
+                        <>
+                          <span className="font-semibold text-foreground">{familyProducts.length}</span>{' '}
+                          representative {familyProducts.length === 1 ? 'product' : 'products'}
+                          {materials.length ? ` · ${materials.join(' / ')}` : ''}
+                        </>
+                      ) : (
+                        'Drawing-Based Review'
+                      )}
                     </p>
                     <ArrowRight
                       aria-hidden="true"

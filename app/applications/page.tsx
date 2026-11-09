@@ -22,8 +22,8 @@ export default async function ApplicationsPage() {
     <>
       <PageHero
         eyebrow="Applications"
-        title="Where RunCing valves and connectors are used"
-        description="Review common use areas for RunCing valves and connectors, then share your system details for product selection."
+        title="Confirmed Application Scope"
+        description="RunCing currently focuses on air ball valves for compressed-air systems and drawing-based custom component review."
         crumbs={[{ label: 'Applications' }]}
       />
       <Section labelledBy="application-context-title">
@@ -31,8 +31,8 @@ export default async function ApplicationsPage() {
           <Reveal>
             <div className="relative aspect-[16/10] overflow-hidden bg-stage">
               <Image
-                src="/images/hero-product-range.jpg"
-                alt="RunCing valve and connector product range"
+                src="/images/banners/air-ball-valve-series.jpg"
+                alt="Customer-supplied collection of brass air ball valve components, fittings and adapters"
                 fill
                 priority
                 sizes="(min-width: 1024px) 58vw, 100vw"
@@ -44,20 +44,20 @@ export default async function ApplicationsPage() {
             <SectionHeading
               id="application-context-title"
               eyebrow="Selection context"
-              title="Start with the system, not a generic part number"
-              description="Media, operating conditions and the required interface help narrow the appropriate product family and material. The areas below show which details to include in an RFQ."
+              title="Start With the Actual Operating Requirement"
+              description="Provide the medium, operating pressure, drawing, material and interface. RunCing reviews each requirement before confirming whether a product or custom component is suitable."
             />
             <div className="mt-6 flex flex-wrap gap-2 text-sm font-semibold">
-              <span className="bg-stage px-3 py-2">System</span>
               <span className="bg-stage px-3 py-2">Media</span>
-              <span className="bg-stage px-3 py-2">Interface</span>
+              <span className="bg-stage px-3 py-2">Operating Pressure</span>
+              <span className="bg-stage px-3 py-2">Drawing or Sample</span>
             </div>
           </Reveal>
         </div>
       </Section>
       <Section labelledBy="areas-title">
         <h2 id="areas-title" className="sr-only">
-          Application areas
+          Application Areas
         </h2>
         <ul className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
           {areas.map((area) => (
@@ -100,13 +100,13 @@ export default async function ApplicationsPage() {
           <SectionHeading
             id="applications-cta-title"
             eyebrow="Next step"
-            title="Describe your application"
-            description="Tell RunCing the system, the media and the interface. Technical review starts from the details you provide."
+            title="Describe Your Application"
+            description="Tell RunCing the medium, pressure, drawing, material and interface. Suitability is confirmed only after technical review."
           />
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-            <CtaLink href="/contact#rfq">Request a quote</CtaLink>
+            <CtaLink href="/contact#rfq">Request a Quote</CtaLink>
             <CtaLink href="/products" variant="outline" arrow={false}>
-              Browse products
+              Browse Products
             </CtaLink>
           </div>
         </Reveal>

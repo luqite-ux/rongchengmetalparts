@@ -31,7 +31,7 @@ export function ApplicationsSection({
           ))}
           <li className="group border-b border-r bg-accent p-6 transition-colors duration-200 hover:bg-secondary motion-reduce:transition-none">
             <h3 className="text-xl font-semibold tracking-tight text-accent-foreground">
-              Application not listed?
+              Application Not Listed?
             </h3>
             <p className="mt-2 text-sm leading-relaxed text-foreground">
               Describe your equipment in an RFQ and RunCing will review it with you.

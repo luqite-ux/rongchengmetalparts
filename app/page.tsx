@@ -21,9 +21,9 @@ import { RfqSection } from '@/components/rfq/rfq-section'
 export const revalidate = 60
 
 export const metadata: Metadata = {
-  title: { absolute: 'RunCing Tech | Valves and connectors manufacturer' },
+  title: { absolute: 'RunCing Tech | Air Ball Valves and Custom Components' },
   description:
-    'RunCing Tech supplies ball valves, valve assemblies and connector assemblies in brass, stainless steel and aluminum, with OEM/ODM support.',
+    'RunCing Tech supplies representative air ball valves, valve assemblies, fittings and adapters, with drawing-based CNC, hot forging, stamping and welding review.',
   alternates: { canonical: '/' },
 }
 
@@ -40,7 +40,16 @@ export default async function HomePage() {
     <>
       <HeroCarousel
         slides={slides}
-        srTitle="RunCing Tech: valves and connectors manufacturer"
+        srTitle="RunCing Tech: Air Ball Valves and Custom Components"
+      />
+      <ManufacturingSection
+        copy={home.sections.manufacturing}
+        manufacturing={home.manufacturing}
+      />
+      <CustomizationSection
+        copy={home.sections.customization}
+        capabilities={home.customization.capabilities}
+        buyerInputs={home.customization.buyerInputs}
       />
       <FamiliesSection copy={home.sections.families} families={families} products={products} />
       <FeaturedProducts
@@ -54,20 +63,11 @@ export default async function HomePage() {
         materials={home.materials}
         products={products}
       />
-      <ManufacturingSection
-        copy={home.sections.manufacturing}
-        manufacturing={home.manufacturing}
-      />
       <QualitySection
         copy={home.sections.quality}
         statements={site.certificationStatements}
         inspection={home.quality.inspection}
         disclaimer={home.quality.disclaimer}
-      />
-      <CustomizationSection
-        copy={home.sections.customization}
-        capabilities={home.customization.capabilities}
-        buyerInputs={home.customization.buyerInputs}
       />
       <ProcessSection copy={home.sections.process} steps={home.process} />
       <FaqSection copy={home.sections.faq} items={home.faq} />

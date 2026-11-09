@@ -37,7 +37,7 @@ export function CustomizationSection({
         </Reveal>
         <Reveal delay={100}>
           <div className="border bg-card p-6 sm:p-8">
-            <h3 className="text-xl font-semibold tracking-tight">Inputs to include in your RFQ</h3>
+            <h3 className="text-xl font-semibold tracking-tight">Inputs to Include in Your RFQ</h3>
             <p className="mt-2 text-sm text-muted-foreground">
               Provide what you have. Missing items are clarified during technical review.
             </p>

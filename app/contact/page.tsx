@@ -38,7 +38,7 @@ export default async function ContactPage({
     <>
       <PageHero
         eyebrow="Contact"
-        title="Contact and request for quotation"
+        title="Contact and Request for Quotation"
         description="Send your requirements to RunCing for product selection, availability and quotation details."
         crumbs={[{ label: 'Contact' }]}
       />

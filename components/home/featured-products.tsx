@@ -22,9 +22,36 @@ export function FeaturedProducts({
           <SectionHeading id="featured-products-title" {...copy} />
         </Reveal>
         <CtaLink href="/products" variant="outline">
-          View all products
+          View All Products
         </CtaLink>
       </div>
+      <Reveal className="mt-10">
+        <div className="grid overflow-hidden border bg-stage lg:grid-cols-[minmax(0,1.6fr)_minmax(18rem,.7fr)]">
+          <div className="relative aspect-[12/5] min-h-64 lg:aspect-auto">
+            <Image
+              src="/images/banners/air-ball-valve-series.jpg"
+              alt="Customer-supplied collection of brass valve components, fittings and adapters"
+              fill
+              sizes="(min-width: 1024px) 70vw, 100vw"
+              className="object-cover object-[70%_50%]"
+            />
+          </div>
+          <div className="flex flex-col justify-center p-6 sm:p-8 lg:p-10">
+            <p className="font-mono text-xs font-semibold uppercase tracking-[0.14em] text-primary">
+              Product Collection
+            </p>
+            <h3 className="mt-3 text-2xl font-semibold tracking-tight sm:text-3xl">
+              More Than Six Product Configurations
+            </h3>
+            <p className="mt-4 text-sm leading-relaxed text-muted-foreground sm:text-base">
+              The cards below are representative products. Send a drawing, sample or regular model reference so the required size, thread, interface and material can be reviewed.
+            </p>
+            <div className="mt-6">
+              <CtaLink href="/contact#rfq">Send Your Drawing</CtaLink>
+            </div>
+          </div>
+        </div>
+      </Reveal>
       <ul className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {products.map((product, productIndex) => (
           <li key={product.slug}>
@@ -41,3 +68,4 @@ export function FeaturedProducts({
     </Section>
   )
 }
+import Image from 'next/image'

@@ -1,7 +1,7 @@
 export type FamilySlug =
-  | 'ball-valve-series'
   | 'valve-assemblies'
-  | 'connector-series'
+  | 'fittings-adapters'
+  | 'others'
 
 export type MaterialSlug = 'brass' | 'stainless-steel' | 'aluminum'
 

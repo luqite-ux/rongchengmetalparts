@@ -1,61 +1,33 @@
 import type { Product, ProductFamily } from '@/lib/types'
+import { catalogFamilies, catalogFamilyForProduct } from '@/lib/customer-revision'
 
-export const families: ProductFamily[] = [
-  {
-    slug: 'ball-valve-series',
-    name: 'Ball Valve Series',
-    descriptor: 'Ball valves',
-    summary:
-      'Quarter-turn style ball valve with a handle, represented by the Air Line Ball Valve.',
-    scope: ['Air Line Ball Valve'],
-  },
-  {
-    slug: 'valve-assemblies',
-    name: 'Valve Assemblies',
-    descriptor: 'Valve Series',
-    summary:
-      'Machined valve assemblies available in brass, stainless steel and aluminum.',
-    scope: [
-      'Brass Valve Assembly',
-      'Stainless Steel Valve Assembly',
-      'Aluminum Valve Assembly',
-    ],
-  },
-  {
-    slug: 'connector-series',
-    name: 'Connector Series',
-    descriptor: 'Connector assemblies',
-    summary:
-      'Connector assemblies for joining lines and changing direction: the Elbow Assembly and the Straight Connector.',
-    scope: ['Elbow Assembly', 'Straight Connector'],
-  },
-]
+export const families: ProductFamily[] = catalogFamilies
 
-const rfqFact = { label: 'Size, thread and interface', value: 'Confirmed during RFQ and technical review' }
+const rfqFact = { label: 'Size, Thread and Interface', value: 'Confirmed during RFQ and technical review' }
 const customFact = { label: 'Customization', value: 'OEM/ODM discussion supported' }
 
 export const products: Product[] = [
   {
     slug: 'air-line-ball-valve',
     name: 'Air Line Ball Valve',
-    familySlug: 'ball-valve-series',
+    familySlug: catalogFamilyForProduct('air-line-ball-valve'),
     materialSlug: 'brass',
     materialLabel: 'Brass body',
     summary:
       'Ball valve with a brass body, wing-style handle and threaded ends.',
     description: [
-      'The Air Line Ball Valve is the Ball Valve Series product in RunCing’s current range.',
+      'The Air Line Ball Valve is a representative product in RunCing’s Air Ball Valve Series.',
       'A brass body with a wing-style handle, male threaded end and female threaded end.',
       'Thread standard, size and handle style are confirmed against your drawing or sample during technical review.',
     ],
     highlights: [
-      'Ball Valve Series',
+      'Air Ball Valve Series',
       'Brass body as shown',
       'Wing-style handle',
       'Male and female threaded ends as shown',
     ],
     facts: [
-      { label: 'Product family', value: 'Ball Valve Series' },
+      { label: 'Product Family', value: 'Air Ball Valve Series / Valve Assemblies' },
       { label: 'Material', value: 'Brass body' },
       { label: 'Handle', value: 'Wing-style, as shown' },
       rfqFact,
@@ -95,7 +67,7 @@ export const products: Product[] = [
       'Hex collar and machined shoulders',
     ],
     facts: [
-      { label: 'Product family', value: 'Valve Assemblies' },
+      { label: 'Product Family', value: 'Valve Assemblies' },
       { label: 'Material', value: 'Brass' },
       rfqFact,
       customFact,
@@ -134,9 +106,9 @@ export const products: Product[] = [
       'Top bore as shown',
     ],
     facts: [
-      { label: 'Product family', value: 'Valve Assemblies' },
+      { label: 'Product Family', value: 'Valve Assemblies' },
       { label: 'Material', value: 'Stainless steel' },
-      { label: 'Material grade', value: 'Confirmed during RFQ' },
+      { label: 'Material Grade', value: 'Confirmed during RFQ' },
       rfqFact,
       customFact,
     ],
@@ -174,9 +146,9 @@ export const products: Product[] = [
       'Sealing ring as shown',
     ],
     facts: [
-      { label: 'Product family', value: 'Valve Assemblies' },
+      { label: 'Product Family', value: 'Valve Assemblies' },
       { label: 'Material', value: 'Aluminum' },
-      { label: 'Alloy and surface treatment', value: 'Confirmed during RFQ' },
+      { label: 'Alloy and Surface Treatment', value: 'Confirmed during RFQ' },
       rfqFact,
       customFact,
     ],
@@ -197,24 +169,24 @@ export const products: Product[] = [
   {
     slug: 'elbow-assembly',
     name: 'Elbow Assembly',
-    familySlug: 'connector-series',
+    familySlug: catalogFamilyForProduct('elbow-assembly'),
     materialSlug: null,
     materialLabel: 'Material confirmed per RFQ',
     summary:
       'Bent connector assembly with a male threaded end and a hex swivel-nut end.',
     description: [
-      'The Elbow Assembly is a Connector Series product used to change line direction.',
+      'The Elbow Assembly is a representative Fittings & Adapters product used to change line direction.',
       'A bent tube section with a male threaded end and a hex swivel-nut end.',
       'Material, angle, tube size and thread standard are confirmed from your drawing or sample during technical review.',
     ],
     highlights: [
-      'Connector Series',
+      'Fittings & Adapters',
       'Bent form as shown',
       'Male threaded end',
       'Hex swivel-nut end',
     ],
     facts: [
-      { label: 'Product family', value: 'Connector Series' },
+      { label: 'Product Family', value: 'Air Ball Valve Series / Fittings & Adapters' },
       { label: 'Material', value: 'Confirmed during RFQ' },
       rfqFact,
       customFact,
@@ -230,30 +202,30 @@ export const products: Product[] = [
     seo: {
       title: 'Elbow Assembly',
       description:
-        'Elbow Assembly from the RunCing Tech Connector Series. Request a quote with your angle, thread and material requirements.',
+      'Elbow Assembly from RunCing Tech Fittings & Adapters. Request a quote with your angle, thread and material requirements.',
     },
   },
   {
     slug: 'straight-connector',
     name: 'Straight Connector',
-    familySlug: 'connector-series',
+    familySlug: catalogFamilyForProduct('straight-connector'),
     materialSlug: null,
     materialLabel: 'Material confirmed per RFQ',
     summary:
       'Straight connector with a ribbed barb end and a hex nut end.',
     description: [
-      'The Straight Connector is a Connector Series product for joining lines in a straight run.',
+      'The Straight Connector is a representative Fittings & Adapters product for joining lines in a straight run.',
       'A ribbed barb end with a sealing shoulder and hex nut end.',
       'Material, barb size and thread standard are confirmed from your drawing or sample during technical review.',
     ],
     highlights: [
-      'Connector Series',
+      'Fittings & Adapters',
       'Ribbed barb end as shown',
       'Hex nut end as shown',
       'Straight configuration',
     ],
     facts: [
-      { label: 'Product family', value: 'Connector Series' },
+      { label: 'Product Family', value: 'Air Ball Valve Series / Fittings & Adapters' },
       { label: 'Material', value: 'Confirmed during RFQ' },
       rfqFact,
       customFact,
@@ -269,7 +241,7 @@ export const products: Product[] = [
     seo: {
       title: 'Straight Connector',
       description:
-        'Straight Connector from the RunCing Tech Connector Series. Share your drawing or sample to request a quote.',
+      'Straight Connector from RunCing Tech Fittings & Adapters. Share your drawing or sample to request a quote.',
     },
   },
 ]

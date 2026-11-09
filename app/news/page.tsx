@@ -32,7 +32,7 @@ export default async function NewsPage() {
     <>
       <PageHero
         eyebrow="News"
-        title="News and updates"
+        title="News and Updates"
         description="Announcements and articles from RunCing Tech."
         crumbs={[{ label: 'News' }]}
       />
@@ -47,7 +47,7 @@ export default async function NewsPage() {
               <EmptyMedia>
                 <Newspaper aria-hidden="true" />
               </EmptyMedia>
-              <EmptyTitle>No articles published yet</EmptyTitle>
+              <EmptyTitle>No Articles Published Yet</EmptyTitle>
               <EmptyDescription>
                 RunCing has not published any news. Articles will appear here once real content is
                 available.

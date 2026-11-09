@@ -62,7 +62,7 @@ export function RfqSection({
             </div>
           </address>
           <div className="mt-8 border-t pt-6">
-            <h3 className="text-base font-semibold">Useful to include</h3>
+            <h3 className="text-base font-semibold">Useful to Include</h3>
             <ul className="mt-3 list-disc space-y-1.5 pl-5 text-sm leading-relaxed text-muted-foreground marker:text-primary">
               {buyerInputs.slice(0, 6).map((input) => (
                 <li key={input}>{input}</li>

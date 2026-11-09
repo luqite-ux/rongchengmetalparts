@@ -1,16 +1,13 @@
-import { Cog, Factory, Gauge, PanelsTopLeft, Truck } from 'lucide-react'
+import { FilePenLine, Gauge } from 'lucide-react'
 import type { LucideIcon } from 'lucide-react'
 
 const icons: Record<string, LucideIcon> = {
-  'commercial-vehicles': Truck,
-  trailers: PanelsTopLeft,
-  'cnc-equipment': Cog,
-  'hydraulic-pneumatic-systems': Gauge,
-  'industrial-equipment': Factory,
+  'compressed-air-systems': Gauge,
+  'drawing-based-custom-parts': FilePenLine,
 }
 
 export function ApplicationIcon({ slug }: { slug: string }) {
-  const Icon = icons[slug] ?? Factory
+  const Icon = icons[slug] ?? FilePenLine
   return (
     <span
       aria-hidden="true"

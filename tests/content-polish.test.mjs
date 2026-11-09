@@ -38,9 +38,9 @@ test('application areas use a consistent semantic icon set', () => {
 
   assert.match(homeApplications, /ApplicationIcon/)
   assert.match(applicationsPage, /ApplicationIcon/)
-  assert.match(applicationIcon, /Truck/)
+  assert.match(applicationIcon, /FilePenLine/)
   assert.match(applicationIcon, /Gauge/)
-  assert.match(applicationIcon, /Factory/)
+  assert.match(applicationIcon, /compressed-air-systems/)
 })
 
 test('alerts do not use thick side-tab borders', () => {
@@ -63,13 +63,13 @@ test('English RFQ captcha uses English accessible text', () => {
 test('product families are a compact navigation layer rather than a second product-card grid', () => {
   const families = read('components/home/families-section.tsx')
 
-  assert.match(families, /Browse by family/)
+  assert.match(families, /Browse Air Ball Valve Series categories/)
   assert.match(families, /CircleGauge/)
   assert.match(families, /Settings2/)
   assert.match(families, /Waypoints/)
   assert.match(families, /family\.descriptor/)
   assert.match(families, /'product' : 'products'/)
-  assert.match(families, /sort\(\(left, right\) => left\.productCount - right\.productCount\)/)
+  assert.doesNotMatch(families, /sort\(\(left, right\) => left\.productCount - right\.productCount\)/)
   assert.match(families, /delay=\{familyIndex \* 80\}/)
   assert.match(families, /group-hover:translate-x-1/)
   assert.match(families, /motion-reduce:transform-none/)
@@ -117,7 +117,7 @@ test('company photography uses the reusable masonry lightbox experience', () => 
 test('applications page leads with real product imagery and a graphic application grid', () => {
   const applications = read('app/applications/page.tsx')
 
-  assert.match(applications, /hero-product-range\.jpg/)
+  assert.match(applications, /air-ball-valve-series\.jpg/)
   assert.match(applications, /ApplicationIcon/)
   assert.match(applications, /aria-hidden="true" className="size-12/)
   assert.doesNotMatch(applications, /padStart\(2, '0'\)/)

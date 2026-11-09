@@ -9,7 +9,7 @@ export const site = {
   email: 'info@rongchengmetalparts.com',
   location: 'Ningbo, China',
   streetAddress: 'No. 1, Lane 10, Xuneng North Road, Dajiahe Industrial Park, Ninghai County, Ningbo, Zhejiang, China',
-  tagline: 'Valves and connectors manufacturer',
+  tagline: 'Air Ball Valves and Custom Components',
   description:
     'RunCing Tech (RunCing Electromechanical Technology Co., Ltd.) supplies ball valves, valve assemblies and connector assemblies in brass, stainless steel and aluminum, with OEM/ODM support.',
   factory: {
@@ -26,19 +26,19 @@ export const navigation: NavItem[] = [
     href: '/products',
     children: [
       {
-        label: 'Ball Valve Series',
-        href: '/products?family=ball-valve-series',
-        description: 'Air Line Ball Valve',
-      },
-      {
         label: 'Valve Assemblies',
         href: '/products?family=valve-assemblies',
-        description: 'Brass, stainless steel and aluminum',
+        description: 'Air ball valves and machined valve assemblies',
       },
       {
-        label: 'Connector Series',
-        href: '/products?family=connector-series',
-        description: 'Elbow Assembly and Straight Connector',
+        label: 'Fittings & Adapters',
+        href: '/products?family=fittings-adapters',
+        description: 'Representative elbows and straight connectors',
+      },
+      {
+        label: 'Others',
+        href: '/products?family=others',
+        description: 'Drawing-based custom requirements',
       },
     ],
   },

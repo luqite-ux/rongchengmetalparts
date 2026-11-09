@@ -2,6 +2,7 @@ import { cache } from 'react'
 import { en, type SiteContent } from '@/lib/content/en'
 import { defaultLocale, type Locale } from '@/lib/i18n'
 import type { Article, FamilySlug, Product } from '@/lib/types'
+import { catalogFamilyForProduct } from '@/lib/customer-revision'
 import { createClient } from '@supabase/supabase-js'
 
 /**
@@ -58,18 +59,7 @@ export const getNavigation = cache(async (locale: Locale = defaultLocale) => {
 })
 
 export const getProductFamilies = cache(async (locale: Locale = defaultLocale) => {
-  const fallback = getContent(locale).families
-  const db = database()
-  const tenant = tenantId()
-  if (!db || !tenant) return fallback
-  const { data } = await db.from('product_categories').select('slug,name,name_en,name_i18n,description,description_en,description_i18n').eq('tenant_id', tenant).eq('is_active', true).is('parent_id', null).order('sort_order')
-  if (!data?.length) return fallback
-  return data.map((row) => {
-    const original = fallback.find((item) => item.slug === row.slug)
-    const name = localized(row.name_i18n, locale, row.name_en || row.name || original?.name || row.slug)
-    const summary = localized(row.description_i18n, locale, row.description_en || row.description || original?.summary || '')
-    return { slug: row.slug as FamilySlug, name, descriptor: original?.descriptor || name, summary, scope: original?.scope || [] }
-  })
+  return getContent(locale).families
 })
 
 export async function getProductFamilyBySlug(
@@ -99,7 +89,7 @@ export const getProducts = cache(
         const images = [row.image_url, ...rawImages].filter((value, index, all): value is string => typeof value === 'string' && Boolean(value) && all.indexOf(value) === index).map((src, index) => ({ src, alt: `${name}${index ? ` — view ${index + 1}` : ''}` }))
         const features = Array.isArray(row.features_i18n?.[locale]) ? row.features_i18n[locale] : Array.isArray(row.features) ? row.features : []
         const facts = row.specs && typeof row.specs === 'object' ? Object.entries(row.specs).map(([label, value]) => ({ label, value: String(value) })) : []
-        return { slug: row.slug, name, familySlug: row.category_slug as FamilySlug, materialSlug: fallback?.materialSlug ?? null, materialLabel: fallback?.materialLabel ?? '', summary, description: [overview], highlights: features.map(String), facts, images, seo: { title: `${name} | RunCing Tech`, description: summary } }
+        return { slug: row.slug, name, familySlug: catalogFamilyForProduct(row.slug, row.category_slug) as FamilySlug, materialSlug: fallback?.materialSlug ?? null, materialLabel: fallback?.materialLabel ?? '', summary, description: [overview], highlights: features.map(String), facts, images, seo: { title: `${name} | RunCing Tech`, description: summary } }
       })
     }
     return filter?.familySlug

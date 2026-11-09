@@ -12,18 +12,18 @@ const geistMono = Geist_Mono({ subsets: ['latin'], variable: '--font-geist-mono'
 export const metadata: Metadata = {
   metadataBase: new URL('https://rongchengmetalparts.com'),
   title: {
-    default: 'RunCing Tech | Valves and connectors manufacturer',
+    default: 'RunCing Tech | Air Ball Valves and Custom Components',
     template: '%s | RunCing Tech',
   },
   description:
-    'RunCing Tech (RunCing Electromechanical Technology Co., Ltd.) supplies ball valves, valve assemblies and connector assemblies in brass, stainless steel and aluminum, with OEM/ODM support.',
+    'RunCing Tech supplies representative air ball valves, valve assemblies, fittings and adapters, with drawing-based CNC, hot forging, stamping and welding review.',
   applicationName: 'RunCing Tech',
   openGraph: {
     type: 'website',
     siteName: 'RunCing Tech',
     locale: 'en_US',
     url: 'https://rongchengmetalparts.com',
-    images: [{ url: '/images/hero-product-range.jpg', width: 2576, height: 1073 }],
+    images: [{ url: '/images/banners/air-ball-valve-series.jpg', width: 3840, height: 1600 }],
   },
   icons: {
     icon: '/images/logo-mark.png',
