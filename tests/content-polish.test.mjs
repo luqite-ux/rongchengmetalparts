@@ -83,7 +83,7 @@ test('material cards use a flat comparison layout without nested product cards',
   const materials = read('components/home/materials-section.tsx')
 
   assert.match(materials, /aspect-\[16\/10\]/)
-  assert.match(materials, /Products in this material/)
+  assert.match(materials, /Products in This Material/)
   assert.match(materials, /ArrowUpRight/)
   assert.doesNotMatch(materials, /border-t-4/)
   assert.doesNotMatch(materials, /grid-cols-2 gap-3/)

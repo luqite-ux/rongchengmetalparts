@@ -60,7 +60,7 @@ export default async function ProductsPage({
       />
       <Section labelledBy="catalog-title">
         <h2 id="catalog-title" className="sr-only">
-          {activeFamily ? `${activeFamily.name} products` : 'All products'}
+          {activeFamily ? `${activeFamily.name} Products` : 'All Products'}
         </h2>
         <nav aria-label="Filter by product family">
           <ul className="flex flex-wrap gap-2">

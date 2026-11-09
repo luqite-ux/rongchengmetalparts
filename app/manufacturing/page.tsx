@@ -94,7 +94,7 @@ export default async function ManufacturingPage() {
           <Reveal>
             <SectionHeading
               id="inspection-title"
-              eyebrow="Inspection and reports"
+              eyebrow="Inspection and Reports"
               title="Quality Information Available"
               description={quality.disclaimer}
             />

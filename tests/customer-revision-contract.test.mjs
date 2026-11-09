@@ -1,4 +1,5 @@
 import assert from 'node:assert/strict'
+import { readFile } from 'node:fs/promises'
 import test from 'node:test'
 
 async function revisionContract() {
@@ -81,4 +82,18 @@ test('catalog introduction never presents six records as the complete product ra
   const contract = await revisionContract()
   assert.match(contract?.catalogIntroduction ?? '', /representative products/i)
   assert.doesNotMatch(contract?.catalogIntroduction ?? '', /six products|complete catalog/i)
+})
+
+test('visible section and catalog headings use English title case', async () => {
+  const [productsPage, materials, quality, manufacturing] = await Promise.all([
+    readFile(new URL('../app/products/page.tsx', import.meta.url), 'utf8'),
+    readFile(new URL('../components/home/materials-section.tsx', import.meta.url), 'utf8'),
+    readFile(new URL('../components/home/quality-section.tsx', import.meta.url), 'utf8'),
+    readFile(new URL('../app/manufacturing/page.tsx', import.meta.url), 'utf8'),
+  ])
+  const source = [productsPage, materials, quality, manufacturing].join('\n')
+  assert.match(source, /All Products/)
+  assert.match(source, /Products in This Material/)
+  assert.match(source, /Quality Management Systems/)
+  assert.match(source, /Inspection and Reports/)
 })

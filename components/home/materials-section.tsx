@@ -48,7 +48,7 @@ export function MaterialsSection({
                       {material.note}
                     </p>
                     <h4 className="mt-5 border-t pt-4 text-xs font-semibold uppercase tracking-[0.1em] text-muted-foreground">
-                      Products in this material
+                      Products in This Material
                     </h4>
                     <ul className="mt-2 divide-y">
                       {materialProducts.map((product) => (
