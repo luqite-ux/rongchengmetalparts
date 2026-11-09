@@ -19,7 +19,7 @@ export async function generateMetadata(): Promise<Metadata> {
 export default async function ManufacturingPage() {
   const [home, site] = await Promise.all([getHomeContent(), getSiteSettings()])
   const { manufacturing, quality, process } = home
-  const image = manufacturing.images[0]
+  const image = site.companyMedia[1] ?? site.companyMedia[0]
   const facts = manufacturing.facts
 
   return (
@@ -50,22 +50,22 @@ export default async function ManufacturingPage() {
             </dl>
             <p className="border-t pt-4 text-sm text-muted-foreground">{manufacturing.scaleNote}</p>
           </Reveal>
-          <Reveal delay={100}>
+          {image ? <Reveal delay={100}>
             <figure>
               <div className="relative aspect-[16/10] w-full overflow-hidden bg-stage">
                 <Image
-                  src={image.src}
-                  alt={image.alt}
+                  src={image}
+                  alt="RunCing machining workshop with production equipment"
                   fill
                   sizes="(min-width: 1024px) 50vw, 100vw"
-                  className="object-cover object-[18%_50%]"
+                  className="object-cover"
                 />
               </div>
               <figcaption className="mt-3 text-xs text-muted-foreground">
-                Customer-supplied overview of representative precision components.
+                RunCing machining workshop and production equipment.
               </figcaption>
             </figure>
-          </Reveal>
+          </Reveal> : null}
         </div>
       </Section>
       {site.companyMedia.length ? (
@@ -76,19 +76,6 @@ export default async function ManufacturingPage() {
           <CompanyGallery images={site.companyMedia} label="RunCing facility and equipment gallery" />
         </Section>
       ) : null}
-      <Section labelledBy="line-title" tone="stage">
-        <Reveal>
-          <SectionHeading
-            id="line-title"
-            eyebrow="Capability line"
-            title="Four Priority Capabilities"
-            description="Each project starts with the buyer's drawing, sample, material and acceptance requirements."
-          />
-        </Reveal>
-        <div className="mt-12">
-          <StepLine steps={manufacturing.capabilityLine} columns={4} />
-        </div>
-      </Section>
       <Section labelledBy="inspection-title">
         <div className="grid gap-10 lg:grid-cols-2 lg:gap-14">
           <Reveal>

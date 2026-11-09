@@ -97,3 +97,24 @@ test('visible section and catalog headings use English title case', async () => 
   assert.match(source, /Quality Management Systems/)
   assert.match(source, /Inspection and Reports/)
 })
+
+test('customer-supplied composite banners stay inside the homepage hero', async () => {
+  const [featured, applications, manufacturingPage, manufacturingHome] = await Promise.all([
+    readFile(new URL('../components/home/featured-products.tsx', import.meta.url), 'utf8'),
+    readFile(new URL('../app/applications/page.tsx', import.meta.url), 'utf8'),
+    readFile(new URL('../app/manufacturing/page.tsx', import.meta.url), 'utf8'),
+    readFile(new URL('../components/home/manufacturing-section.tsx', import.meta.url), 'utf8'),
+  ])
+  for (const source of [featured, applications, manufacturingPage, manufacturingHome]) {
+    assert.doesNotMatch(source, /images\/banners\//)
+  }
+  assert.match(featured, /product\.images\[0\]/)
+  assert.match(applications, /getProducts/)
+  assert.match(manufacturingPage, /site\.companyMedia/)
+})
+
+test('latest revision copy does not repeat the rejected six-product framing', async () => {
+  const featured = await readFile(new URL('../components/home/featured-products.tsx', import.meta.url), 'utf8')
+  assert.doesNotMatch(featured, /More Than Six|Six Product|six product/i)
+  assert.match(featured, /Representative Air Ball Valve Series/)
+})

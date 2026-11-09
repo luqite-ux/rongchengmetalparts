@@ -22,7 +22,7 @@ test('public English copy uses buyer-facing language and includes verified compa
   assert.match(pages, /10,000 m²/)
   assert.match(pages, /founded in 2014/)
   assert.match(pages, /roots in custom metalworking dating to 1997/)
-  assert.match(pages, /monthly capacity of approximately 500,000 pieces/i)
+  assert.match(pages, /approximately 500,000 pieces per month/i)
 })
 
 test('mobile hero follows content height without a fixed flex spacer', () => {
@@ -117,7 +117,8 @@ test('company photography uses the reusable masonry lightbox experience', () => 
 test('applications page leads with real product imagery and a graphic application grid', () => {
   const applications = read('app/applications/page.tsx')
 
-  assert.match(applications, /air-ball-valve-series\.jpg/)
+  assert.match(applications, /getProducts/)
+  assert.match(applications, /airBallValve\.images\[0\]/)
   assert.match(applications, /ApplicationIcon/)
   assert.match(applications, /aria-hidden="true" className="size-12/)
   assert.doesNotMatch(applications, /padStart\(2, '0'\)/)

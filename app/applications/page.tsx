@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import Image from 'next/image'
-import { getApplicationAreas, getPageMeta } from '@/lib/data'
+import { getApplicationAreas, getPageMeta, getProducts } from '@/lib/data'
 import { PageHero } from '@/components/site/page-hero'
 import { CtaLink, Section, SectionHeading } from '@/components/site/primitives'
 import { Reveal } from '@/components/site/reveal'
@@ -16,7 +16,8 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default async function ApplicationsPage() {
-  const areas = await getApplicationAreas()
+  const [areas, products] = await Promise.all([getApplicationAreas(), getProducts()])
+  const airBallValve = products.find((product) => product.slug === 'air-line-ball-valve') ?? products[0]
 
   return (
     <>
@@ -30,26 +31,28 @@ export default async function ApplicationsPage() {
         <div className="grid items-center gap-10 lg:grid-cols-[minmax(0,1.15fr)_minmax(20rem,.85fr)] lg:gap-14">
           <Reveal>
             <div className="relative aspect-[16/10] overflow-hidden bg-stage">
-              <Image
-                src="/images/banners/air-ball-valve-series.jpg"
-                alt="Customer-supplied collection of brass air ball valve components, fittings and adapters"
-                fill
-                priority
-                sizes="(min-width: 1024px) 58vw, 100vw"
-                className="object-cover"
-              />
+              {airBallValve ? (
+                <Image
+                  src={airBallValve.images[0].src}
+                  alt={airBallValve.images[0].alt}
+                  fill
+                  priority
+                  sizes="(min-width: 1024px) 58vw, 100vw"
+                  className="object-contain p-8 sm:p-12"
+                />
+              ) : null}
             </div>
           </Reveal>
           <Reveal delay={100}>
             <SectionHeading
               id="application-context-title"
               eyebrow="Selection context"
-              title="Start With the Actual Operating Requirement"
-              description="Provide the medium, operating pressure, drawing, material and interface. RunCing reviews each requirement before confirming whether a product or custom component is suitable."
+              title="Start With Your Compressed-Air Requirement"
+              description="For air ball valves, provide the medium, working pressure, thread and interface requirements. Drawing-based custom parts are reviewed separately against the supplied drawing or sample."
             />
             <div className="mt-6 flex flex-wrap gap-2 text-sm font-semibold">
-              <span className="bg-stage px-3 py-2">Media</span>
-              <span className="bg-stage px-3 py-2">Operating Pressure</span>
+              <span className="bg-stage px-3 py-2">Compressed Air</span>
+              <span className="bg-stage px-3 py-2">Thread &amp; Interface</span>
               <span className="bg-stage px-3 py-2">Drawing or Sample</span>
             </div>
           </Reveal>

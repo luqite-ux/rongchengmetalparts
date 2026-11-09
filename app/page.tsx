@@ -45,6 +45,7 @@ export default async function HomePage() {
       <ManufacturingSection
         copy={home.sections.manufacturing}
         manufacturing={home.manufacturing}
+        imageSrc={site.companyMedia[1] ?? site.companyMedia[0]}
       />
       <CustomizationSection
         copy={home.sections.customization}

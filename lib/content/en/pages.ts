@@ -2,7 +2,6 @@ import type {
   ApplicationArea,
   FaqItem,
   HeroSlide,
-  ImageAsset,
   MaterialOption,
   ProcessStep,
 } from '@/lib/types'
@@ -103,33 +102,11 @@ export const materialOptions: MaterialOption[] = [
 ]
 
 export const manufacturingContent = {
-  facts: [
-    {
-      label: 'Hot-Forging Equipment',
-      description: 'RunCing operates hot-forging equipment as part of its manufacturing capability.',
-    },
-    {
-      label: 'Four Workshops',
-      description: 'A 10,000 m² facility is organized into four specialized workshops for brass, iron, aluminum and stamping work.',
-    },
-    {
-      label: 'Production Capacity',
-      description: 'Monthly capacity of approximately 500,000 pieces supports current manufacturing operations.',
-    },
-    {
-      label: 'Inspection and Reports',
-      description: 'Inspection records and report formats are confirmed for each project.',
-    },
-  ],
+  facts: priorityCapabilities.map((capability) => ({
+    label: capability.title,
+    description: capability.description,
+  })),
   capabilityLine: priorityCapabilities,
-  images: [
-    {
-      src: '/images/banners/precision-manufacturing.jpg',
-      alt: 'Customer-supplied banner showing precision-machined metal components',
-      width: 3840,
-      height: 1600,
-    },
-  ] satisfies ImageAsset[],
   scaleNote:
     'Share the product, quantity and delivery destination so production planning can be reviewed for your order.',
 }

@@ -1,23 +1,20 @@
 import Image from 'next/image'
-import type { ImageAsset } from '@/lib/types'
 import { CtaLink, Section, SectionHeading } from '@/components/site/primitives'
 import { Reveal } from '@/components/site/reveal'
-import { StepLine } from '@/components/site/step-line'
 
 type Manufacturing = {
   facts: { label: string; description: string }[]
-  capabilityLine: { title: string; description: string }[]
-  images: ImageAsset[]
 }
 
 export function ManufacturingSection({
   copy,
   manufacturing,
+  imageSrc,
 }: {
   copy: { eyebrow: string; title: string; description: string }
   manufacturing: Manufacturing
+  imageSrc?: string
 }) {
-  const image = manufacturing.images[0]
   const facts = manufacturing.facts
 
   return (
@@ -39,20 +36,17 @@ export function ManufacturingSection({
             </CtaLink>
           </div>
         </Reveal>
-        <Reveal delay={100}>
+        {imageSrc ? <Reveal delay={100}>
           <div className="relative aspect-[4/3] w-full overflow-hidden sm:aspect-[16/10]">
             <Image
-              src={image.src}
-              alt={image.alt}
+              src={imageSrc}
+              alt="RunCing machining workshop with production equipment"
               fill
               sizes="(min-width: 1024px) 46vw, 92vw"
-              className="object-cover object-[12%_50%]"
+              className="object-cover"
             />
           </div>
-        </Reveal>
-      </div>
-      <div className="mt-14 border-t border-white/60 pt-10">
-        <StepLine steps={manufacturing.capabilityLine} onDark />
+        </Reveal> : null}
       </div>
     </Section>
   )
