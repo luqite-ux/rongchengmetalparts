@@ -18,20 +18,20 @@ export function ManufacturingSection({
   const facts = manufacturing.facts
 
   return (
-    <Section id="manufacturing-capability" labelledBy="manufacturing-title" tone="green">
+    <Section id="manufacturing-capability" labelledBy="manufacturing-title" tone="white">
       <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-14">
         <Reveal>
-          <SectionHeading id="manufacturing-title" onDark {...copy} />
+          <SectionHeading id="manufacturing-title" {...copy} />
           <dl className="mt-8 space-y-0">
             {facts.map((fact) => (
-              <div key={fact.label} className="border-t border-white/60 py-4">
+              <div key={fact.label} className="border-t border-border py-4">
                 <dt className="text-lg font-semibold">{fact.label}</dt>
-                <dd className="mt-1 text-sm leading-relaxed text-white">{fact.description}</dd>
+                <dd className="mt-1 text-sm leading-relaxed text-muted-foreground">{fact.description}</dd>
               </div>
             ))}
           </dl>
           <div className="mt-4">
-            <CtaLink href="/manufacturing" variant="onDark">
+            <CtaLink href="/manufacturing">
               Manufacturing details
             </CtaLink>
           </div>

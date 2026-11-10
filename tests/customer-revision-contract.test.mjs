@@ -118,3 +118,22 @@ test('latest revision copy does not repeat the rejected six-product framing', as
   assert.doesNotMatch(featured, /More Than Six|Six Product|six product/i)
   assert.match(featured, /Representative Air Ball Valve Series/)
 })
+
+test('homepage manufacturing capability section uses the requested white theme', async () => {
+  const source = await readFile(new URL('../components/home/manufacturing-section.tsx', import.meta.url), 'utf8')
+  assert.match(source, /tone="white"/)
+  assert.doesNotMatch(source, /tone="green"|onDark|border-white|text-white/)
+})
+
+test('Others includes the complete customer-supplied stamping and welding product set', async () => {
+  const contract = await revisionContract()
+  assert.equal(contract?.stampingWeldingProducts.length, 21)
+  assert.deepEqual(
+    contract?.stampingWeldingProducts.map(({ slug, sourceFile, categorySlug }) => ({ slug, sourceFile, categorySlug })),
+    Array.from({ length: 21 }, (_, index) => ({
+      slug: `stamping-welding-part-${String(index + 1).padStart(2, '0')}`,
+      sourceFile: `${index + 1}.png`,
+      categorySlug: 'others',
+    })),
+  )
+})

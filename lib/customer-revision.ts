@@ -80,6 +80,17 @@ export const catalogFamilies: ProductFamily[] = [
   },
 ]
 
+export const stampingWeldingProducts = Array.from({ length: 21 }, (_, index) => {
+  const number = index + 1
+  const padded = String(number).padStart(2, '0')
+  return {
+    slug: `stamping-welding-part-${padded}`,
+    name: `Stamping & Welding Part ${padded}`,
+    sourceFile: `${number}.png`,
+    categorySlug: 'others' as const,
+  }
+})
+
 const fittings = new Set(['elbow-assembly', 'straight-connector'])
 const valves = new Set([
   'air-line-ball-valve',
